@@ -15,4 +15,7 @@
         <servlet-name>ControllerServlet</servlet-name>
         <url-pattern>/processing</url-pattern>
     </servlet-mapping>
+    <error-page>
+        <location>/error-pages/422.jsp</location>
+    </error-page>
 </web-app>
