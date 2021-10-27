@@ -1,7 +1,4 @@
-<%@ page import="java.time.LocalDateTime" %>
-<%@ page import="java.util.LinkedList" %>
-<%@ page import="com.example.Web2.results.Data" %>
-<%@ page import="java.util.Iterator" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
 <html lang="ru">
@@ -10,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image" href="vt-logo.jpg">
+    <link rel="icon" type="image/jpg" href="img/vt-logo.jpg">
     <title>First lab of Web</title>
     <style>
         .header {
@@ -272,7 +269,7 @@
         <!-- 4-я четверть -->
 
         <path fill="blue" fill-opacity="0.4"
-              d="M175,175 A175,575 50 0,1 240,175" L 175,240 Z></path>
+              d="M240,175 A75,125 90 0,1 175,240 L 175,175 Z"></path>
 
     </svg>
 
@@ -290,7 +287,8 @@
             <td>Hit</td>
             </thead>
             <tbody>
-            <c:forEach items="${bean}" var="item">
+            <jsp:useBean id="Bean" scope="request" class="com.example.Web2.results.Bean"/>
+            <c:forEach items="${Bean.bean}" var="item">
                 <tr>
                     <td>${item.x}</td>
                     <td>${item.y}</td>
