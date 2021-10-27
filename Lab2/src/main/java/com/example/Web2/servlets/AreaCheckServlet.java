@@ -44,12 +44,12 @@ public class AreaCheckServlet extends HttpServlet {
 
             request.setAttribute("bean", bean);
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-            dispatcher.forward(request, response);
         } catch (NumberFormatException exception) {
             response.setStatus(422);
-            return;
         }
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        dispatcher.forward(request, response);
     }
 
 
