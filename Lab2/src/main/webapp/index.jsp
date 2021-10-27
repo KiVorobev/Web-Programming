@@ -1,0 +1,310 @@
+<%@ page import="java.time.LocalDateTime" %>
+<%@ page import="java.util.LinkedList" %>
+<%@ page import="com.example.Web2.results.Data" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image" href="vt-logo.jpg">
+    <title>First lab of Web</title>
+    <style>
+        .header {
+            text-align: center;
+            font: 30px monospace;
+            color: #ecec97;
+            width: 1518px;
+            height: 90px;
+            background-color: purple;
+            position: relative;
+            box-shadow: 0 0 10px 5px rgba(16, 18, 30, 0.55);
+            border-radius: 0 0 20px 20px;
+            z-index: 1000;
+        }
+
+        body {
+            background: white;
+            margin: auto;
+            height: 100%;
+        }
+
+        a {
+            margin: 0;
+            font: 45px monospace;
+            text-align: center;
+        }
+
+        .main {
+            top: 90px;
+            left: 10%;
+            width: 1200px;
+            height: 595px;
+            box-shadow: 0 0 10px 5px rgba(16, 18, 30, 0.55);
+            background-color: whitesmoke;
+            font: 30px "Century Gothic";
+            position: absolute;
+        }
+
+        select {
+            text-align: center;
+            width: 200px;
+        }
+
+        input {
+            text-align: center;
+            width: 191px;
+        }
+
+        svg {
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            left: 770px;
+            top: 85px;
+            border-radius: 20px 20px 20px 20px;
+            border: 5px solid #a81111;
+        }
+
+        .forUsers {
+            font: 25px "Century Gothic";
+            height: 428px;
+            width: 648px;
+            top: 50px;
+            left: 50px;
+            color: #ecec97;
+            position: absolute;
+            background-color: #1b3370;
+            box-shadow: 0 0 50px 10px rgba(34, 41, 121, 0.55);
+            border-radius: 20px 20px 20px 20px;
+        }
+
+        .X_value {
+            position: relative;
+            margin-top: 60px;
+            margin-left: 30px;
+        }
+
+        .Y_value {
+            position: relative;
+            margin-top: 55px;
+            margin-left: 55px;
+        }
+
+        .R_value {
+            position: relative;
+            margin-top: 55px;
+            margin-left: 100px;
+        }
+
+        #reset, #check {
+            position: relative;
+            width: 200px;
+            height: 50px;
+            top: 50px;
+            box-shadow: 0 0 10px 5px rgba(238, 240, 20, 0.5);
+            border-radius: 20px 20px 20px 20px;
+            font: 18px "Century Gothic";
+            left: 10px;
+            margin-left: 90px;
+        }
+
+        #R, #Y {
+            text-align: center;
+            position: absolute;
+            border-radius: 20px 20px 20px 20px;
+            height: 30px;
+            outline: none;
+            right: 50px;
+        }
+
+        #X {
+            text-align: center;
+            position: absolute;
+            top: 6px;
+            right: 15px;
+            font-size: 18px;
+        }
+
+        #X_error, #Y_error, #R_error {
+            position: absolute;
+            color: #d31f1f;
+            width: 560px;
+            height: 36px;
+            left: 55px;
+            text-align: center;
+        }
+
+        #results {
+            max-width: 1200px;
+            width: 1200px;
+            top: 548px;
+            height: 75px;
+            position: absolute;
+            background-color: whitesmoke;
+            box-shadow: 0 18px 10px 5px rgba(16, 18, 30, 0.55);
+            text-align: center;
+            border-spacing: 60px 5px;
+            position: absolute;
+        }
+
+        input[type=checkbox] {
+            width: 10px;
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Шапка -->
+<div class="header">
+    <a href="https://github.com/KiVorobev" title="Go to the developer's github"
+       style="text-decoration: none;color:#ecec97" ;>
+        Vorobyev Kirill,P3231
+    </a>
+    <br/>Variant 95291
+</div>
+
+<!-- Основная часть -->
+<div class="main">
+
+    <form method="GET" id="form" name="form" onsubmit="return checkForm()" action="${pageContext.request.contextPath}/processing">
+
+        <!-- Блок взаимодействия с пользователем -->
+        <div class="forUsers">
+
+            <!-- Блок для значения X -->
+            <div class="X_value">
+                <text>Choose X coordinate:</text>
+                <div id="X">
+                    <input type="checkbox" name="X" value="-3">-3
+                    <input type="checkbox" name="X" value="-2">-2
+                    <input type="checkbox" name="X" value="-1">-1
+                    <input type="checkbox" name="X" value="0"> 0
+                    <input type="checkbox" name="X" value="1"> 1
+                    <input type="checkbox" name="X" value="2"> 2
+                    <input type="checkbox" name="X" value="3"> 3
+                    <input type="checkbox" name="X" value="4"> 4
+                    <input type="checkbox" name="X" value="5"> 5
+                </div>
+            </div>
+
+            <!-- Блок ошибки для координаты X -->
+            <div id="X_error">
+            </div>
+
+            <!-- Блок для значения Y -->
+            <div class="Y_value">
+                <text>Enter Y coordinate:</text>
+                <input type="text" id="Y" name="Y" placeholder="Value (-5...3)">
+            </div>
+
+            <!-- Блок ошибки для координаты Y -->
+            <div id="Y_error">
+            </div>
+
+            <!-- Блок для значения R -->
+            <div class="R_value">
+                <text>Enter R value:</text>
+                <input type="text" id="R" name="R" placeholder="Value (2...5)">
+            </div>
+
+            <!-- Блок ошибки для значения R -->
+            <div id="R_error">
+            </div>
+
+            <!-- Блок кнопок -->
+            <div class="buttons">
+                <input id="check" name="check" type="submit" value="Check">
+                <input id="reset" name="reset" type="reset" value="Reset">
+            </div>
+        </div>
+    </form>
+
+    <!-- Блок графика -->
+    <svg xmlns="http://www.w3.org/2000/svg" id="picture">
+
+        <!-- Оси координат -->
+        <line stroke="black" x1="0" y1="175" x2="350" y2="175"/>
+        <line stroke="black" x1="175" y1="0" x2="175" y2="350"/>
+
+        <!-- Стрелки к осям -->
+        <polygon points="175,0 170,15 180,15" stroke="black"></polygon>
+        <polygon points="350,175 335,170 335,180" stroke="black"></polygon>
+
+        <!-- Значения на осях -->
+        <text x="335" y="165" font-size="25">x</text>
+        <text x="185" y="15" font-size="25">y</text>
+
+        <!-- Метки на оси X -->
+        <line stroke="black" x1="40" y1="170" x2="40" y2="180"/>
+        <line stroke="black" x1="110" y1="170" x2="110" y2="180"/>
+        <line stroke="black" x1="240" y1="170" x2="240" y2="180"/>
+        <line stroke="black" x1="310" y1="170" x2="310" y2="180"/>
+
+        <!-- Метки на оси Y -->
+        <line stroke="black" x1="170" y1="40" x2="180" y2="40"/>
+        <line stroke="black" x1="170" y1="110" x2="180" y2="110"/>
+        <line stroke="black" x1="170" y1="240" x2="180" y2="240"/>
+        <line stroke="black" x1="170" y1="310" x2="180" y2="310"/>
+
+        <!-- Подписи к меткам на оси X -->
+        <text x="35" y="160" font-size="20">-R</text>
+        <text x="90" y="160" font-size="20">-R/2</text>
+        <text x="225" y="160" font-size="20">R/2</text>
+        <text x="305" y="160" font-size="20">R</text>
+
+        <!-- Подписи к меткам на оси Y -->
+        <text x="185" y="45" font-size="20">R</text>
+        <text x="185" y="115" font-size="20">R/2</text>
+        <text x="185" y="245" font-size="20">-R/2</text>
+        <text x="185" y="315" font-size="20">-R</text>
+
+        <!-- 2-я четверть -->
+        <polygon points="110,175 175,175 175,40 110,40" fill="blue" fill-opacity="0.4"></polygon>
+
+        <!-- 3-я четверть -->
+        <polygon points="40,175 175,175 175,240" fill="blue" fill-opacity="0.4"></polygon>
+
+        <!-- 4-я четверть -->
+
+        <path fill="blue" fill-opacity="0.4"
+              d="M175,175 A175,575 50 0,1 240,175" L 175,240 Z></path>
+
+    </svg>
+
+    <!-- Блок таблицы результатов -->
+    <div>
+        <table id="results">
+            <hr style="margin-top: 520px">
+            <caption>Results:</caption>
+            <thead>
+            <td>X</td>
+            <td>Y</td>
+            <td>R</td>
+            <td>Current time</td>
+            <td>Execution time</td>
+            <td>Hit</td>
+            </thead>
+            <tbody>
+            <c:forEach items="${bean}" var="item">
+                <tr>
+                    <td>${item.x}</td>
+                    <td>${item.y}</td>
+                    <td>${item.r}</td>
+                    <td>${item.currentTime}</td>
+                    <td>${item.executionTime}</td>
+                    <td>${item.result}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="js/dataValidator.js"></script>
+<script src="js/switcher.js"></script>
+</body>
+</html>
