@@ -272,6 +272,17 @@
         <!-- 4-я четверть -->
         <path fill="blue" fill-opacity="0.4"
               d="M240,175 A75,125 90 0,1 175,240 L 175,175 Z"></path>
+
+        <!-- Добавление точек на координатную плоскость -->
+        <%
+            List<Data> beanList = Bean.getInstance().getBeanList();
+            for (Data nextData : beanList) {
+                double coordinateX = (nextData.getX() * 135 / nextData.getR()) + 175;
+                double coordinateY = - (nextData.getY() * 135 / nextData.getR()) + 175;
+                String color = (nextData.isResult()) ? "#0fc40f" : "red";
+                out.println("<circle fill=\"" + color + "\" cx=\"" + coordinateX + "\" cy=\"" + coordinateY + "\"  r=\"5\"></circle>");
+            }
+        %>
     </svg>
 
     <!-- Блок таблицы результатов -->
@@ -288,8 +299,8 @@
             <td>Hit</td>
             </thead>
             <tbody>
+            <!-- Вывод результатов в таблицу -->
             <%
-                List<Data> beanList = Bean.getInstance().getBeanList();
                 for (Data nextData : beanList) {
                     out.println("<tr>");
                     out.println("<td>" + nextData.getX() + "</td>");
@@ -297,11 +308,8 @@
                     out.println("<td style=\"max-width: 200px; word-wrap: break-word\";>" + nextData.getR() +"</td>");
                     out.println("<td>" + nextData.getCurrentTime() + "</td>");
                     out.println("<td>" + nextData.getExecutionTime() + " ms</td>");
-                   if (nextData.isResult() == true) {
-                       out.println("<td style=\"color: #0fc40f\">" + nextData.isResult() + "</td>");
-                   } else {
-                       out.println("<td style=\"color: red\">" + nextData.isResult() + "</td>");
-                   }
+                    String color = (nextData.isResult()) ? "#0fc40f" : "red";
+                    out.println("<td style=\"color: " + color + "\">" + nextData.isResult() + "</td>");
                     out.println("</tr>");
                 }
             %>
