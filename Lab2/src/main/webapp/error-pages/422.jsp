@@ -16,7 +16,7 @@
 <h1>Error 422</h1>
 <h2>Invalid data</h2>
 <p>The data you are trying to send is invalid, check the conditions.<br/>
-    <a href="/Web2">Back to main page</a></p>
+    <a href="/Web2_Web_exploded">Back to main page</a></p>
 </div>
 </body>
 </html>
