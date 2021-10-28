@@ -24,6 +24,7 @@ public class AreaCheckServlet extends HttpServlet {
                 response.setStatus(422);
                 return;
             }
+
             String currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
             long start = System.nanoTime();
             Boolean result = isHit(x, y, r);
@@ -52,14 +53,14 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     private boolean upLeft(double x, double y, double r) {
-        return ((x >= -r / 2 && y <= r) && (x <= 0 && y >= 0));
+        return ((x >= -r / 2.0 && y <= r) && (x <= 0 && y >= 0));
     }
 
     private boolean downLeft(double x, double y, double r) {
-        return ((y >= -1 / 2 * x - r / 2) && (x <= 0 && y <= 0));
+        return ((y >= ((-1.0 / 2.0) * x) - (r / 2.0)) && (x <= 0 && y <= 0));
     }
 
     private boolean downRight(double x, double y, double r) {
-        return ((x * x + y * y <= r * r / 4) && (x >= 0 && y <= 0));
+        return ((x * x + y * y <= r * r / 4.0) && (x >= 0 && y <= 0));
     }
 }
