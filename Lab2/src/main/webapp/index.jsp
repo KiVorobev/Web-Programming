@@ -272,9 +272,6 @@
         <!-- 4-я четверть -->
         <path fill="blue" fill-opacity="0.4"
               d="M240,175 A75,125 90 0,1 175,240 L 175,175 Z"></path>
-
-        <!-- Точка -->
-        <circle id="dot" fill="green" color="green" r="0" cx="0" cy="0"></circle>
     </svg>
 
     <!-- Блок таблицы результатов -->
