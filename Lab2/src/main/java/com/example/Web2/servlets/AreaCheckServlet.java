@@ -13,8 +13,6 @@ public class AreaCheckServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        Bean bean = new Bean();
-
         Data data = new Data();
 
         try {
@@ -38,11 +36,7 @@ public class AreaCheckServlet extends HttpServlet {
             data.setExecutionTime(executionTime);
             data.setResult(result);
 
-            bean.add(data);
-
-            System.out.println(bean.getBean());
-
-            request.setAttribute("bean", bean);
+            Bean.getInstance().addData(data);
 
         } catch (NumberFormatException exception) {
             response.setStatus(422);
