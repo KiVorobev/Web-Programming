@@ -1,3 +1,6 @@
+<%@ page import="com.example.Web2.results.Data" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.example.Web2.results.Bean" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
@@ -267,10 +270,11 @@
         <polygon points="40,175 175,175 175,240" fill="blue" fill-opacity="0.4"></polygon>
 
         <!-- 4-я четверть -->
-
         <path fill="blue" fill-opacity="0.4"
               d="M240,175 A75,125 90 0,1 175,240 L 175,175 Z"></path>
 
+        <!-- Точка -->
+        <circle id="dot" fill="green" color="green" r="0" cx="0" cy="0"></circle>
     </svg>
 
     <!-- Блок таблицы результатов -->
@@ -287,17 +291,23 @@
             <td>Hit</td>
             </thead>
             <tbody>
-            <jsp:useBean id="Bean" scope="request" class="com.example.Web2.results.Bean"/>
-            <c:forEach items="${Bean.bean}" var="item">
-                <tr>
-                    <td>${item.x}</td>
-                    <td>${item.y}</td>
-                    <td>${item.r}</td>
-                    <td>${item.currentTime}</td>
-                    <td>${item.executionTime}</td>
-                    <td>${item.result}</td>
-                </tr>
-            </c:forEach>
+            <%
+                List<Data> beanList = Bean.getInstance().getBeanList();
+                for (Data nextData : beanList) {
+                    out.println("<tr>");
+                    out.println("<td>" + nextData.getX() + "</td>");
+                    out.println("<td style=\"max-width: 200px; word-wrap: break-word\";>" + nextData.getY() +"</td>");
+                    out.println("<td style=\"max-width: 200px; word-wrap: break-word\";>" + nextData.getR() +"</td>");
+                    out.println("<td>" + nextData.getCurrentTime() + "</td>");
+                    out.println("<td>" + nextData.getExecutionTime() + " ms</td>");
+                   if (nextData.isResult() == true) {
+                       out.println("<td style=\"color: #0fc40f\">" + nextData.isResult() + "</td>");
+                   } else {
+                       out.println("<td style=\"color: red\">" + nextData.isResult() + "</td>");
+                   }
+                    out.println("</tr>");
+                }
+            %>
             </tbody>
         </table>
     </div>
