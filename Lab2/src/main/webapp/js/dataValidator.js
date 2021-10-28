@@ -48,7 +48,7 @@ function checkForm() {
 
     if (r.value.trim() != null && r.value.trim() != "") {
         if (/^(0$|-?[1-9]\d*(\.\d*[1-9]$)?|-?0\.\d*[1-9])$/.test(r.value)) {
-            if ((parseInt(r.value) > 1) && (parseInt(r.value) < 5)) {
+            if ((Number(r.value) > 2) && (Number(r.value) < 5)) {
                 rError.innerHTML = "";
                 allRightR = true;
             } else {
