@@ -303,9 +303,9 @@
             <%
                 for (Data nextData : beanList) {
                     out.println("<tr>");
-                    out.println("<td>" + nextData.getX() + "</td>");
-                    out.println("<td style=\"max-width: 200px; word-wrap: break-word\";>" + nextData.getY() +"</td>");
-                    out.println("<td style=\"max-width: 200px; word-wrap: break-word\";>" + nextData.getR() +"</td>");
+                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getX() +"</td>");
+                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getY() +"</td>");
+                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getR() +"</td>");
                     out.println("<td>" + nextData.getCurrentTime() + "</td>");
                     out.println("<td>" + nextData.getExecutionTime() + " ms</td>");
                     String color = (nextData.isResult()) ? "#0fc40f" : "red";
@@ -319,5 +319,12 @@
 </div>
 <script src="js/dataValidator.js"></script>
 <script src="js/switcher.js"></script>
+<script src="js/click.js"></script>
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+    $(document).on('click', 'svg', function (event) {
+        checkClick(event);
+    });
+</script>
 </body>
 </html>
