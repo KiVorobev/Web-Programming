@@ -16,7 +16,7 @@ public class ControllerServlet extends HttpServlet {
                 if ((x.trim() != null && y.trim() != null && r.trim() != null) && (x.trim() != "" && y.trim() != "" && r.trim() != "")) {
                     getServletContext().getNamedDispatcher("AreaCheckServlet").forward(request, response);
                 } else {
-                    getServletContext().getNamedDispatcher("./index.jsp").forward(request, response);
+                    getServletContext().getNamedDispatcher("/index.jsp").forward(request, response);
                 }
     }
 }
