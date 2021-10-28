@@ -279,7 +279,7 @@
             for (Data nextData : beanList) {
                 double coordinateX = (nextData.getX() * 135 / nextData.getR()) + 175;
                 double coordinateY = - (nextData.getY() * 135 / nextData.getR()) + 175;
-                String color = (nextData.isResult()) ? "#0fc40f" : "red";
+                String color = (nextData.isResult()) ? "red" : "#302929";
                 out.println("<circle fill=\"" + color + "\" cx=\"" + coordinateX + "\" cy=\"" + coordinateY + "\"  r=\"5\"></circle>");
             }
         %>
