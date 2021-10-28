@@ -52,7 +52,6 @@ function checkForm() {
                 rError.innerHTML = "";
                 allRightR = true;
             } else {
-                console.log(parseInt(r.value));
                 rError.innerHTML = "R can take value in the range (2 ... 5)!";
                 allRightR = false;
             }
