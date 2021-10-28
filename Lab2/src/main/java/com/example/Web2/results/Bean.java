@@ -2,22 +2,27 @@ package com.example.Web2.results;
 
 import java.util.LinkedList;
 
+import java.util.List;
+
 public class Bean {
-    private LinkedList<Data> bean;
 
-    public Bean() {
-        bean = new LinkedList<>();
+    private final List<Data> beanList;
+    private static Bean instance;
+
+    private Bean(){
+        beanList = new LinkedList<>();
     }
 
-    public LinkedList<Data> getBean() {
-            return bean;
+    public static Bean getInstance(){
+        if (instance == null) instance = new Bean();
+        return instance;
     }
 
-    public void setBean(LinkedList<Data> bean) {
-            this.bean = bean;
+    public List<Data> getBeanList(){
+        return beanList;
     }
 
-    public void add(Data data){
-        bean.push(data);
+    public synchronized void addData(Data data) {
+        beanList.add(data);
     }
 }
