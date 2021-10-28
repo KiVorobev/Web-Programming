@@ -16,7 +16,7 @@ public class AreaCheckServlet extends HttpServlet {
         Data data = new Data();
 
         try {
-            int x = Integer.parseInt(request.getParameter("X"));
+            double x = Double.parseDouble(request.getParameter("X"));
             double y = Double.parseDouble(request.getParameter("Y"));
             double r = Double.parseDouble(request.getParameter("R"));
 
@@ -47,19 +47,19 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
 
-    private boolean isHit(int x, double y, double r) {
+    private boolean isHit(double x, double y, double r) {
         return upLeft(x, y, r) || downLeft(x, y, r) || downRight(x, y, r);
     }
 
-    private boolean upLeft(int x, double y, double r) {
+    private boolean upLeft(double x, double y, double r) {
         return ((x >= -r / 2 && y <= r) && (x <= 0 && y >= 0));
     }
 
-    private boolean downLeft(int x, double y, double r) {
+    private boolean downLeft(double x, double y, double r) {
         return ((y >= -1 / 2 * x - r / 2) && (x <= 0 && y <= 0));
     }
 
-    private boolean downRight(int x, double y, double r) {
+    private boolean downRight(double x, double y, double r) {
         return ((x * x + y * y <= r * r / 4) && (x >= 0 && y <= 0));
     }
 }
