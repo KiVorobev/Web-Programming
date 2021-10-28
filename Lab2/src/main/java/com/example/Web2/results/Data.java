@@ -1,18 +1,18 @@
 package com.example.Web2.results;
 
 public class Data {
-    private int x;
+    private double x;
     private double y;
     private double r;
     private String currentTime;
     private long executionTime;
     private boolean result;
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(double x) {
         this.x = x;
     }
 
