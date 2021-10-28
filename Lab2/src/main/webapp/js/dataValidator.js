@@ -15,10 +15,6 @@ var allRightY = true;
 var allRightR = true;
 
 function checkForm() {
-
-    console.log("y:", y.value);
-    console.log("r:", r.value);
-
     let xSelected = false;
     for (let xBox of xBoxes) {
         if (xBox.checked) {
@@ -52,10 +48,11 @@ function checkForm() {
 
     if (r.value.trim() != null && r.value.trim() != "") {
         if (/^(0$|-?[1-9]\d*(\.\d*[1-9]$)?|-?0\.\d*[1-9])$/.test(r.value)) {
-            if ((parseInt(r.value) > 2) && (parseInt(r.value) < 5)) {
+            if ((parseInt(r.value) > 1) && (parseInt(r.value) < 5)) {
                 rError.innerHTML = "";
                 allRightR = true;
             } else {
+                console.log(parseInt(r.value));
                 rError.innerHTML = "R can take value in the range (2 ... 5)!";
                 allRightR = false;
             }
