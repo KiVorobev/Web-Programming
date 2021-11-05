@@ -8,6 +8,7 @@ var r = document.getElementById('R');
 var xError = document.getElementById('X_error');
 var yError = document.getElementById('Y_error');
 var rError = document.getElementById('R_error');
+var pictureError = document.getElementById('picture_error');
 
 var allRight = true;
 var allRightX = true;
@@ -15,6 +16,7 @@ var allRightY = true;
 var allRightR = true;
 
 function checkForm() {
+    pictureError.innerHTML = "";
     let xSelected = false;
     for (let xBox of xBoxes) {
         if (xBox.checked) {
