@@ -138,6 +138,17 @@
             text-align: center;
         }
 
+        #picture_error {
+            position: absolute;
+            left: 730px;
+            top: 450px;
+            height: 36px;
+            text-align: center;
+            color: #d31f1f;
+            width: 430px;
+            font-size: 25px;
+        }
+
         #results {
             max-width: 1200px;
             width: 1200px;
@@ -171,7 +182,8 @@
 <!-- Основная часть -->
 <div class="main">
 
-    <form method="GET" id="form" name="form" onsubmit="return checkForm()" action="${pageContext.request.contextPath}/processing">
+    <form method="GET" id="form" name="form" onsubmit="return false;"
+          action="${pageContext.request.contextPath}/processing">
 
         <!-- Блок взаимодействия с пользователем -->
         <div class="forUsers">
@@ -193,8 +205,7 @@
             </div>
 
             <!-- Блок ошибки для координаты X -->
-            <div id="X_error">
-            </div>
+            <div id="X_error"></div>
 
             <!-- Блок для значения Y -->
             <div class="Y_value">
@@ -203,8 +214,7 @@
             </div>
 
             <!-- Блок ошибки для координаты Y -->
-            <div id="Y_error">
-            </div>
+            <div id="Y_error"></div>
 
             <!-- Блок для значения R -->
             <div class="R_value">
@@ -213,8 +223,7 @@
             </div>
 
             <!-- Блок ошибки для значения R -->
-            <div id="R_error">
-            </div>
+            <div id="R_error"></div>
 
             <!-- Блок кнопок -->
             <div class="buttons">
@@ -278,12 +287,15 @@
             List<Data> beanList = Bean.getInstance().getBeanList();
             for (Data nextData : beanList) {
                 double coordinateX = (nextData.getX() * 135 / nextData.getR()) + 175;
-                double coordinateY = - (nextData.getY() * 135 / nextData.getR()) + 175;
+                double coordinateY = -(nextData.getY() * 135 / nextData.getR()) + 175;
                 String color = (nextData.isResult()) ? "red" : "#302929";
                 out.println("<circle fill=\"" + color + "\" cx=\"" + coordinateX + "\" cy=\"" + coordinateY + "\"  r=\"5\"></circle>");
             }
         %>
     </svg>
+
+    <!-- Блок ошибки выбора значений x и y на рисунке -->
+    <div id="picture_error"></div>
 
     <!-- Блок таблицы результатов -->
     <div>
@@ -303,9 +315,9 @@
             <%
                 for (Data nextData : beanList) {
                     out.println("<tr>");
-                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getX() +"</td>");
-                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getY() +"</td>");
-                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getR() +"</td>");
+                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getX() + "</td>");
+                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getY() + "</td>");
+                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getR() + "</td>");
                     out.println("<td>" + nextData.getCurrentTime() + "</td>");
                     out.println("<td>" + nextData.getExecutionTime() + " ms</td>");
                     String color = (nextData.isResult()) ? "#0fc40f" : "red";
