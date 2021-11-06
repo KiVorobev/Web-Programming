@@ -1,70 +1,28 @@
 package com.example.Web2.results;
 
+import java.util.LinkedList;
+
+import java.util.List;
+
 public class Data {
-    private double x;
-    private double y;
-    private double r;
-    private String currentTime;
-    private long executionTime;
-    private boolean result;
 
-    public double getX() {
-        return x;
+    private final List<Bean> beanList;
+    private static Data instance;
+
+    private Data(){
+        beanList = new LinkedList<>();
     }
 
-    public void setX(double x) {
-        this.x = x;
+    public static Data getInstance(){
+        if (instance == null) instance = new Data();
+        return instance;
     }
 
-    public double getY() {
-        return y;
+    public List<Bean> getBeanList(){
+        return beanList;
     }
 
-    public void setY(double y) {
-        this.y = y;
-    }
-
-    public double getR() {
-        return r;
-    }
-
-    public void setR(double r) {
-        this.r = r;
-    }
-
-    public String getCurrentTime() {
-        return currentTime;
-    }
-
-    public void setCurrentTime(String currentTime) {
-        this.currentTime = currentTime;
-    }
-
-    public boolean isResult() {
-        return result;
-    }
-
-    public void setResult(boolean result) {
-        this.result = result;
-    }
-
-    public long getExecutionTime() {
-        return executionTime;
-    }
-
-    public void setExecutionTime(long executionTime) {
-        this.executionTime = executionTime;
-    }
-
-    @Override
-    public String toString() {
-        return "Data{" +
-                "x=" + x +
-                ", y=" + y +
-                ", r=" + r +
-                ", currentTime='" + currentTime + '\'' +
-                ", executionTime=" + executionTime +
-                ", result=" + result +
-                '}';
+    public synchronized void addBean(Bean bean) {
+        beanList.add(bean);
     }
 }
