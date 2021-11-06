@@ -1,5 +1,6 @@
 <%@ page import="com.example.Web2.results.Data" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.example.Web2.results.Data" %>
 <%@ page import="com.example.Web2.results.Bean" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -284,11 +285,11 @@
 
         <!-- Добавление точек на координатную плоскость -->
         <%
-            List<Data> beanList = Bean.getInstance().getBeanList();
-            for (Data nextData : beanList) {
-                double coordinateX = (nextData.getX() * 135 / nextData.getR()) + 175;
-                double coordinateY = -(nextData.getY() * 135 / nextData.getR()) + 175;
-                String color = (nextData.isResult()) ? "red" : "#302929";
+            List<Bean> beanList = Data.getInstance().getBeanList();
+            for (Bean nextBean : beanList) {
+                double coordinateX = (nextBean.getX() * 135 / nextBean.getR()) + 175;
+                double coordinateY = -(nextBean.getY() * 135 / nextBean.getR()) + 175;
+                String color = (nextBean.isResult()) ? "red" : "#302929";
                 out.println("<circle fill=\"" + color + "\" cx=\"" + coordinateX + "\" cy=\"" + coordinateY + "\"  r=\"5\"></circle>");
             }
         %>
@@ -313,15 +314,15 @@
             <tbody>
             <!-- Вывод результатов в таблицу -->
             <%
-                for (Data nextData : beanList) {
+                for (Bean nextBean : beanList) {
                     out.println("<tr>");
-                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getX() + "</td>");
-                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getY() + "</td>");
-                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextData.getR() + "</td>");
-                    out.println("<td>" + nextData.getCurrentTime() + "</td>");
-                    out.println("<td>" + nextData.getExecutionTime() + " ms</td>");
-                    String color = (nextData.isResult()) ? "#0fc40f" : "red";
-                    out.println("<td style=\"color: " + color + "\">" + nextData.isResult() + "</td>");
+                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextBean.getX() + "</td>");
+                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextBean.getY() + "</td>");
+                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextBean.getR() + "</td>");
+                    out.println("<td>" + nextBean.getCurrentTime() + "</td>");
+                    out.println("<td>" + nextBean.getExecutionTime() + " ms</td>");
+                    String color = (nextBean.isResult()) ? "#0fc40f" : "red";
+                    out.println("<td style=\"color: " + color + "\">" + nextBean.isResult() + "</td>");
                     out.println("</tr>");
                 }
             %>
@@ -332,6 +333,7 @@
 <script src="js/dataValidator.js"></script>
 <script src="js/switcher.js"></script>
 <script src="js/click.js"></script>
+<script src="js/dots.js"></script>
 <script src="js/jquery-3.6.0.js"></script>
 <script>
     $(document).on('click', 'svg', function (event) {
