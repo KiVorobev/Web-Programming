@@ -43,8 +43,10 @@ public class AreaCheckServlet extends HttpServlet {
             response.setStatus(422);
         }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-        dispatcher.forward(request, response);
+        response.setHeader("Cache-Control", "no-cache");
+        response.setContentType("application/json; charset=UTF-8");
+        System.out.println(bean.jsonBean());
+        //response.getWriter().println(bean.jsonBean());
     }
 
 
