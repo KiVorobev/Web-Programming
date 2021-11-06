@@ -8,8 +8,8 @@ function checkClick(event) {
     yError.innerHTML = "";
     xError.innerHTML = "";
     if (checkR(rError)) {
-        var coordinateX = event.pageX - 925;
-        var coordinateY = event.pageY - 180;
+        let coordinateX = event.pageX - 925;
+        let coordinateY = event.pageY - 180;
         let x = r * (coordinateX - 175) / 135;
         let y = r * (175 - coordinateY) / 135;
         if (checkXY(x, y, pictureError)) {
