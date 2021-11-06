@@ -13,7 +13,7 @@ public class AreaCheckServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        Data data = new Data();
+        Bean bean = new Bean();
 
         try {
             double x = Double.parseDouble(request.getParameter("X"));
@@ -30,14 +30,14 @@ public class AreaCheckServlet extends HttpServlet {
             Boolean result = isHit(x, y, r);
             long executionTime = (System.nanoTime() - start) / 1000;
 
-            data.setX(x);
-            data.setY(y);
-            data.setR(r);
-            data.setCurrentTime(currentTime);
-            data.setExecutionTime(executionTime);
-            data.setResult(result);
+            bean.setX(x);
+            bean.setY(y);
+            bean.setR(r);
+            bean.setCurrentTime(currentTime);
+            bean.setExecutionTime(executionTime);
+            bean.setResult(result);
 
-            Bean.getInstance().addData(data);
+            Data.getInstance().addBean(bean);
 
         } catch (NumberFormatException exception) {
             response.setStatus(422);
