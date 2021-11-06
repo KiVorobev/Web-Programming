@@ -8,12 +8,12 @@ function checkClick(event) {
     yError.innerHTML = "";
     xError.innerHTML = "";
     if (checkR(rError)) {
-        let coordinateX = event.pageX - 925;
-        let coordinateY = event.pageY - 180;
+        var coordinateX = event.pageX - 925;
+        var coordinateY = event.pageY - 180;
         let x = r * (coordinateX - 175) / 135;
         let y = r * (175 - coordinateY) / 135;
         if (checkXY(x, y, pictureError)) {
-            sendRequest(x, y, r);
+            sendRequest(x, y, r, coordinateX, coordinateY);
         }
     }
 }
@@ -50,10 +50,19 @@ function checkXY(x, y, pictureError) {
     }
 }
 
-function sendRequest(x, y, r) {
+function sendRequest(x, y, r, cordX, cordY) {
+    var svg = document.querySelector('#picture');
+    var circ=document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+    circ.style.fill="blue";
+    circ.style.r="5";
+    circ.style.cx=cordX;
+    circ.style.cy=cordY;
     $.ajax({
         url: "./processing",
         type: "GET",
         data: {'X': x, 'Y': y, 'R': r},
+        success: function (response){
+            svg.appendChild(circ);
+        }
     });
 }
