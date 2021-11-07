@@ -25,6 +25,7 @@
             box-shadow: 0 0 10px 5px rgba(16, 18, 30, 0.55);
             border-radius: 0 0 20px 20px;
             z-index: 1000;
+            transition: 300ms;
         }
 
         body {
@@ -39,6 +40,11 @@
             text-align: center;
         }
 
+        .header:hover {
+            transform: scale(1.15);
+            transition: 300ms;
+        }
+
         .main {
             top: 90px;
             left: 10%;
@@ -48,11 +54,6 @@
             background-color: whitesmoke;
             font: 30px "Century Gothic";
             position: absolute;
-        }
-
-        select {
-            text-align: center;
-            width: 200px;
         }
 
         input {
@@ -68,6 +69,7 @@
             top: 85px;
             border-radius: 20px 20px 20px 20px;
             border: 5px solid #a81111;
+            transition: 200ms;
         }
 
         .forUsers {
@@ -106,12 +108,35 @@
             width: 200px;
             height: 50px;
             top: 50px;
-            box-shadow: 0 0 10px 5px rgba(238, 240, 20, 0.5);
             border-radius: 20px 20px 20px 20px;
             font: 18px "Century Gothic";
             left: 10px;
             margin-left: 90px;
+            transition: 200ms;
         }
+
+        #check:hover, #reset:hover {
+            box-shadow: 0 0 10px 5px whitesmoke;
+            transform: scale(1.1);
+            transition: 200ms;
+        }
+
+        #check:active, #reset:active {
+            box-shadow: 0 0 10px 5px greenyellow;
+            transition: 50ms;
+        }
+
+        svg:hover {
+            box-shadow: 0 0 10px 5px red;
+            transition: 200ms;
+            transform: scale(1.2);
+        }
+
+        a:hover {
+            transform: scale(1.2);
+            transition: 200ms;
+        }
+
 
         #R, #Y {
             text-align: center;
@@ -130,9 +155,20 @@
             font-size: 18px;
         }
 
+        #X > input[type=checkbox]:hover {
+            box-shadow: 0 0 5px 2px white;
+            transition: 200ms;
+        }
+
+        #X > input[type=checkbox]:checked {
+            box-shadow: 0 0 5px 2px greenyellow;
+            transition: 200ms;
+        }
+
         #X_error, #Y_error, #R_error {
             position: absolute;
             color: #d31f1f;
+            margin-top: 10px;
             width: 560px;
             height: 36px;
             left: 55px;
@@ -142,7 +178,7 @@
         #picture_error {
             position: absolute;
             left: 730px;
-            top: 450px;
+            top: 485px;
             height: 36px;
             text-align: center;
             color: #d31f1f;
@@ -165,7 +201,12 @@
 
         input[type=checkbox] {
             width: 10px;
+            height: 10px;
             transform: scale(1.3);
+        }
+
+        input[type=text]:hover, input[type=text]:focus {
+            box-shadow: 0 0 10px 5px white;
         }
     </style>
 </head>
@@ -334,6 +375,7 @@
 <script src="js/switcher.js"></script>
 <script src="js/click.js"></script>
 <script src="js/dots.js"></script>
+<script src="js/table.js"></script>
 <script src="js/jquery-3.6.0.js"></script>
 <script>
     $(document).on('click', 'svg', function (event) {
