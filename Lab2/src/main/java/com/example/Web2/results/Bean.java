@@ -14,11 +14,7 @@ public class Bean {
     private boolean result;
 
     public String jsonBean() {
-        System.out.println(this.getBean());
-        System.out.println(JSONUtil.toJSON(this.getBean()));
-        System.out.println("Next");
-        return "a";
-        //return JSONUtil.toJSON(this.getBean());
+        return JSONUtil.toJSON(this.getBean());
     }
 
     private Map<String, String> getBean() {
