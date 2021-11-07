@@ -8,10 +8,10 @@ function checkClick(event) {
     yError.innerHTML = "";
     xError.innerHTML = "";
     if (checkR(rError)) {
-        let coordinateX = event.pageX - 925;
+        let coordinateX = event.pageX - 921;
         let coordinateY = event.pageY - 180;
-        let x = r * (coordinateX - 175) / 135;
-        let y = r * (175 - coordinateY) / 135;
+        let x = (r * (coordinateX - 175) / 135)/1.2;
+        let y = (r * (175 - coordinateY) / 135)/1.2;
         if (checkXY(x, y, pictureError)) {
             sendRequest(x, y, r, coordinateX, coordinateY);
         }
@@ -42,7 +42,7 @@ function checkR(rError) {
 
 function checkXY(x, y, pictureError) {
     if (x < -3 || x > 5 || y < -5 || y > 3) {
-        pictureError.innerHTML = "Invalid x and y values. Please choose valid values on the picture.";
+        pictureError.innerHTML = "Choose valid values on the picture.";
         return false;
     } else {
         pictureError.innerHTML = "";
@@ -50,19 +50,15 @@ function checkXY(x, y, pictureError) {
     }
 }
 
-function sendRequest(x, y, r, cordX, cordY) {
-    var svg = document.querySelector('#picture');
-    var circ=document.createElementNS("http://www.w3.org/2000/svg", 'circle');
-    circ.style.fill="blue";
-    circ.style.r="5";
-    circ.style.cx=cordX;
-    circ.style.cy=cordY;
+function sendRequest(x, y, r) {
     $.ajax({
         url: "./processing",
         type: "GET",
         data: {'X': x, 'Y': y, 'R': r},
         success: function (response){
-            svg.appendChild(circ);
+            console.log(response);
+            drawDots(response.x, response.y, response.r, response.result)
+            addBean(response.x, response.y, response.r, response.currentTime, response.executionTime,response.result);
         }
     });
 }
