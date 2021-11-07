@@ -2,7 +2,6 @@ package com.example.Web2.servlets;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
-import javax.servlet.annotation.*;
 import java.io.IOException;
 
 public class ControllerServlet extends HttpServlet {
@@ -13,10 +12,13 @@ public class ControllerServlet extends HttpServlet {
             String y = request.getParameter("Y");
             String r = request.getParameter("R");
 
-                if ((x.trim() != null && y.trim() != null && r.trim() != null) && (x.trim() != "" && y.trim() != "" && r.trim() != "")) {
-                    getServletContext().getNamedDispatcher("AreaCheckServlet").forward(request, response);
-                } else {
-                    getServletContext().getNamedDispatcher("/index.jsp").forward(request, response);
+                if ((x != null && y != null && r != null) && (!x.trim().equals("") && !y.trim().equals("") && !r.trim().equals(""))) {
+                    request.getRequestDispatcher("./check").forward(request, response);
+//                    getServletContext().getNamedDispatcher("./check").forward(request, response);
                 }
+//                } else {
+//                    request.getRequestDispatcher("./check").forward(request, response);
+//                    getServletContext().getNamedDispatcher("/index.jsp").forward(request, response);
+//                }
     }
 }
