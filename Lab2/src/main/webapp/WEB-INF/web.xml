@@ -12,6 +12,10 @@
         <servlet-class>com.example.Web2.servlets.ControllerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
+        <servlet-name>AreaCheckServlet</servlet-name>
+        <url-pattern>check</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ControllerServlet</servlet-name>
         <url-pattern>/processing</url-pattern>
     </servlet-mapping>
