@@ -27,7 +27,7 @@ public class AreaCheckServlet extends HttpServlet {
 
             String currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
             long start = System.nanoTime();
-            Boolean result = isHit(x, y, r);
+            boolean result = isHit(x, y, r);
             long executionTime = (System.nanoTime() - start) / 1000;
 
             bean.setX(x);
@@ -45,9 +45,7 @@ public class AreaCheckServlet extends HttpServlet {
 
         response.setHeader("Cache-Control", "no-cache");
         response.setContentType("application/json; charset=UTF-8");
-        System.out.println(bean.jsonBean());
-        //response.getWriter().println(bean.jsonBean());
-    }
+        response.getWriter().println(bean.jsonBean()); }
 
 
     private boolean isHit(double x, double y, double r) {
