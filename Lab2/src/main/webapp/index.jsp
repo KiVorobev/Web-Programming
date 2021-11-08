@@ -196,7 +196,6 @@
             box-shadow: 0 18px 10px 5px rgba(16, 18, 30, 0.55);
             text-align: center;
             border-spacing: 60px 5px;
-            position: absolute;
         }
 
         input[type=checkbox] {
@@ -252,7 +251,7 @@
             <!-- Блок для значения Y -->
             <div class="Y_value">
                 <text>Enter Y coordinate:</text>
-                <input type="text" id="Y" name="Y" placeholder="Value (-5...3)">
+                <input type="text" id="Y" name="Y" placeholder="Value (-5...3)" maxlength="8">
             </div>
 
             <!-- Блок ошибки для координаты Y -->
@@ -261,7 +260,7 @@
             <!-- Блок для значения R -->
             <div class="R_value">
                 <text>Enter R value:</text>
-                <input type="text" id="R" name="R" placeholder="Value (2...5)">
+                <input type="text" id="R" name="R" placeholder="Value (2...5)" maxlength="8">
             </div>
 
             <!-- Блок ошибки для значения R -->
@@ -279,8 +278,8 @@
     <svg xmlns="http://www.w3.org/2000/svg" id="picture">
 
         <!-- Оси координат -->
-        <line stroke="black" x1="0" y1="175" x2="350" y2="175"/>
-        <line stroke="black" x1="175" y1="0" x2="175" y2="350"/>
+        <line stroke="black" x1="0" y1="175" x2="350" y2="175"></line>
+        <line stroke="black" x1="175" y1="0" x2="175" y2="350"></line>
 
         <!-- Стрелки к осям -->
         <polygon points="175,0 170,15 180,15" stroke="black"></polygon>
@@ -291,16 +290,16 @@
         <text x="185" y="15" font-size="25">y</text>
 
         <!-- Метки на оси X -->
-        <line stroke="black" x1="40" y1="170" x2="40" y2="180"/>
-        <line stroke="black" x1="110" y1="170" x2="110" y2="180"/>
-        <line stroke="black" x1="240" y1="170" x2="240" y2="180"/>
-        <line stroke="black" x1="310" y1="170" x2="310" y2="180"/>
+        <line stroke="black" x1="40" y1="170" x2="40" y2="180"></line>
+        <line stroke="black" x1="110" y1="170" x2="110" y2="180"></line>
+        <line stroke="black" x1="240" y1="170" x2="240" y2="180"></line>
+        <line stroke="black" x1="310" y1="170" x2="310" y2="180"></line>
 
         <!-- Метки на оси Y -->
-        <line stroke="black" x1="170" y1="40" x2="180" y2="40"/>
-        <line stroke="black" x1="170" y1="110" x2="180" y2="110"/>
-        <line stroke="black" x1="170" y1="240" x2="180" y2="240"/>
-        <line stroke="black" x1="170" y1="310" x2="180" y2="310"/>
+        <line stroke="black" x1="170" y1="40" x2="180" y2="40"></line>
+        <line stroke="black" x1="170" y1="110" x2="180" y2="110"></line>
+        <line stroke="black" x1="170" y1="240" x2="180" y2="240"></line>
+        <line stroke="black" x1="170" y1="310" x2="180" y2="310"></line>
 
         <!-- Подписи к меткам на оси X -->
         <text x="35" y="160" font-size="20">-R</text>
@@ -357,9 +356,9 @@
             <%
                 for (Bean nextBean : beanList) {
                     out.println("<tr>");
-                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextBean.getX() + "</td>");
-                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextBean.getY() + "</td>");
-                    out.println("<td style=\"max-width: 145px; word-wrap: break-word\";>" + nextBean.getR() + "</td>");
+                    out.println("<td style=\"max-width: 151px; word-wrap: break-word\";>" + nextBean.getX() + "</td>");
+                    out.println("<td style=\"max-width: 151px; word-wrap: break-word\";>" + nextBean.getY() + "</td>");
+                    out.println("<td style=\"max-width: 151px; word-wrap: break-word\";>" + nextBean.getR() + "</td>");
                     out.println("<td>" + nextBean.getCurrentTime() + "</td>");
                     out.println("<td>" + nextBean.getExecutionTime() + " ms</td>");
                     String color = (nextBean.isResult()) ? "#0fc40f" : "red";
@@ -371,11 +370,13 @@
         </table>
     </div>
 </div>
-<script src="js/dataValidator.js"></script>
-<script src="js/switcher.js"></script>
 <script src="js/click.js"></script>
 <script src="js/dots.js"></script>
+<script src="js/sender.js"></script>
+<script src="js/submit.js"></script>
+<script src="js/switcher.js"></script>
 <script src="js/table.js"></script>
+<script src="js/validator.js"></script>
 <script src="js/jquery-3.6.0.js"></script>
 <script>
     $(document).on('click', 'svg', function (event) {
