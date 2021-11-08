@@ -14,11 +14,10 @@ public class ControllerServlet extends HttpServlet {
 
                 if ((x != null && y != null && r != null) && (!x.trim().equals("") && !y.trim().equals("") && !r.trim().equals(""))) {
                     request.getRequestDispatcher("./check").forward(request, response);
-//                    getServletContext().getNamedDispatcher("./check").forward(request, response);
                 }
-//                } else {
-//                    request.getRequestDispatcher("./check").forward(request, response);
-//                    getServletContext().getNamedDispatcher("/index.jsp").forward(request, response);
-//                }
+                else {
+                    response.setStatus(422);
+                    return;
+                }
     }
 }
