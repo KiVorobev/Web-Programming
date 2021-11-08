@@ -2,6 +2,7 @@ package com.example.Web2.servlets;
 
 import com.example.Web2.results.Bean;
 import com.example.Web2.results.Data;
+import org.decimal4j.util.DoubleRounder;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -30,9 +31,9 @@ public class AreaCheckServlet extends HttpServlet {
             boolean result = isHit(x, y, r);
             long executionTime = (System.nanoTime() - start) / 1000;
 
-            bean.setX(x);
-            bean.setY(y);
-            bean.setR(r);
+            bean.setX(DoubleRounder.round(x,6));
+            bean.setY(DoubleRounder.round(y,6));
+            bean.setR(DoubleRounder.round(r,6));
             bean.setCurrentTime(currentTime);
             bean.setExecutionTime(executionTime);
             bean.setResult(result);
