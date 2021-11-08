@@ -31,9 +31,9 @@ public class AreaCheckServlet extends HttpServlet {
             boolean result = isHit(x, y, r);
             long executionTime = (System.nanoTime() - start) / 1000;
 
-            bean.setX(DoubleRounder.round(x,6));
-            bean.setY(DoubleRounder.round(y,6));
-            bean.setR(DoubleRounder.round(r,6));
+            bean.setX(DoubleRounder.round(x, 6));
+            bean.setY(DoubleRounder.round(y, 6));
+            bean.setR(DoubleRounder.round(r, 6));
             bean.setCurrentTime(currentTime);
             bean.setExecutionTime(executionTime);
             bean.setResult(result);
@@ -46,7 +46,8 @@ public class AreaCheckServlet extends HttpServlet {
 
         response.setHeader("Cache-Control", "no-cache");
         response.setContentType("application/json; charset=UTF-8");
-        response.getWriter().println(bean.jsonBean()); }
+        response.getWriter().println(bean.jsonBean());
+    }
 
 
     private boolean isHit(double x, double y, double r) {
