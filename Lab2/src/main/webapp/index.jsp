@@ -387,10 +387,5 @@
 <script src="js/table.js"></script>
 <script src="js/validator.js"></script>
 <script src="js/jquery-3.6.0.js"></script>
-<script>
-    $(document).on('click', 'svg', function (event) {
-        checkClick(event);
-    });
-</script>
 </body>
 </html>
