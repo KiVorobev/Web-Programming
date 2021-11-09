@@ -71,7 +71,7 @@ function checkR() {
 
 
 function checkXY(x, y, pictureError) {
-    if (x < -3 || x > 5 || y < -5 || y > 3) {
+    if (x < -3 || x > 5 || y <= -5 || y >= 3) {
         pictureError.innerHTML = "Choose valid values on the picture.";
         return false;
     } else {
