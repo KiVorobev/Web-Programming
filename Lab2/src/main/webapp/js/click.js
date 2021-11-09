@@ -1,3 +1,7 @@
+document.getElementById('picture').addEventListener('click', function (event){
+    checkClick(event);
+});
+
 function checkClick(event) {
     let r = $('#R').val();
     let rError = document.getElementById('R_error');
