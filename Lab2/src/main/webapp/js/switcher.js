@@ -1,20 +1,10 @@
 window.onload = function () {
-    let form = document.forms.form;
-    let xBoxes = form.elements.X;
-    setBoxes(xBoxes);
+    let xBoxes = document.forms[0].elements.X;
     for (let box of xBoxes) {
-        box.onclick = switchBox;
-    }
-}
-
-    function switchBox(eventObj) {
-        for (let box of checkbox) {
-            if (box !== eventObj.target) {
-                box.checked = false;
-            }
+        box.onclick = (event) => {
+            xBoxes.forEach(box => {
+                if (box !== event.target) box.checked = false;
+            })
         }
     }
-
-    function setBoxes(arrayOfBoxes) {
-        checkbox = arrayOfBoxes;
-    }
+}

@@ -386,6 +386,6 @@
 <script src="js/switcher.js"></script>
 <script src="js/table.js"></script>
 <script src="js/validator.js"></script>
-<script src="js/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>

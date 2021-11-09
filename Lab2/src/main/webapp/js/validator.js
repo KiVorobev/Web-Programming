@@ -8,8 +8,8 @@ let yError = document.getElementById('Y_error');
 let rError = document.getElementById('R_error');
 
 function checkX() {
-        let allRightX = true;
-        let xSelected = false;
+    let allRightX = true;
+    let xSelected = false;
     for (let xBox of xBoxes) {
         if (xBox.checked) {
             xSelected = true;
@@ -28,7 +28,7 @@ function checkY() {
     let allRightY;
     if (y.value.trim() != null && y.value.trim() !== "") {
         if (/^(0$|-?[1-9]\d*(\.\d*[1-9]$)?|-?0\.\d*[1-9])$/.test(y.value)) {
-            if ((parseInt(y.value) > -5) && (parseInt(y.value) < 3)) {
+            if ((Number(y.value) > -5) && (Number(y.value) < 3)) {
                 yError.innerHTML = "";
                 allRightY = true;
             } else {
@@ -67,8 +67,6 @@ function checkR() {
     }
     return allRightR;
 }
-
-
 
 function checkXY(x, y, pictureError) {
     if (x < -3 || x > 5 || y <= -5 || y >= 3) {

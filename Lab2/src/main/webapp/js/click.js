@@ -1,4 +1,4 @@
-document.getElementById('picture').addEventListener('click', function (event){
+document.getElementById('picture').addEventListener('click', function (event) {
     checkClick(event);
 });
 
@@ -14,8 +14,8 @@ function checkClick(event) {
     if (checkR(rError)) {
         let coordinateX = event.pageX - 921;
         let coordinateY = event.pageY - 180;
-        let x = (r * (coordinateX - 175) / 135)/1.2;
-        let y = (r * (175 - coordinateY) / 135)/1.2;
+        let x = (r * (coordinateX - 175) / 135) / 1.2;
+        let y = (r * (175 - coordinateY) / 135) / 1.2;
         if (checkXY(x, y, pictureError)) {
             sendRequest(x, y, r, coordinateX, coordinateY);
         }
