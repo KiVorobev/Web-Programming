@@ -211,6 +211,7 @@
             width: 10px;
             height: 10px;
             transform: scale(1.3);
+            transition: 200ms;
         }
 
         input[type=text]:hover, input[type=text]:focus {
@@ -232,8 +233,7 @@
 <!-- Основная часть -->
 <div class="main">
 
-    <form method="GET" id="form" name="form" onsubmit="return false;"
-          action="${pageContext.request.contextPath}/processing">
+    <form id="form" name="form" onsubmit="return false;">
 
         <!-- Блок взаимодействия с пользователем -->
         <div class="forUsers">
