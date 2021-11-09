@@ -41,6 +41,7 @@
         }
 
         .header:hover {
+            box-shadow: 0 0 10px 5px black;
             transform: scale(1.15);
             transition: 300ms;
         }
@@ -83,6 +84,13 @@
             background-color: #1b3370;
             box-shadow: 0 0 50px 10px rgba(34, 41, 121, 0.55);
             border-radius: 20px 20px 20px 20px;
+            transition: 200ms;
+        }
+
+        .forUsers:hover {
+            box-shadow: 0 0 50px 10px blue ;
+            transition: 200ms;
+            transform: scale(1.07);
         }
 
         .X_value {
@@ -158,6 +166,7 @@
         #X > input[type=checkbox]:hover {
             box-shadow: 0 0 5px 2px white;
             transition: 200ms;
+            transform: scale(2);
         }
 
         #X > input[type=checkbox]:checked {
