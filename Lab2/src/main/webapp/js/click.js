@@ -8,7 +8,6 @@ function checkClick(event) {
     let yError = document.getElementById('Y_error');
     let xError = document.getElementById('X_error');
     let pictureError = document.getElementById('picture_error');
-
     yError.innerHTML = "";
     xError.innerHTML = "";
     if (checkR(rError)) {
