@@ -27,7 +27,7 @@ function checkX() {
 function checkY() {
     let allRightY;
     if (y.value.trim() != null && y.value.trim() !== "") {
-        if (/^(0$|-?[1-9]\d*(\.\d*[1-9]$)?|-?0\.\d*[1-9])$/.test(y.value)) {
+        if (/^(0$|-?[0-9]\d*(\.\d*[0-9]$)?|-?0\.\d*[0-9])$/.test(y.value)) {
             if ((Number(y.value) > -5) && (Number(y.value) < 3)) {
                 yError.innerHTML = "";
                 allRightY = true;
@@ -49,7 +49,7 @@ function checkY() {
 function checkR() {
     let allRightR;
     if (r.value.trim() != null && r.value.trim() !== "") {
-        if (/^(0$|-?[1-9]\d*(\.\d*[1-9]$)?|-?0\.\d*[1-9])$/.test(r.value)) {
+        if (/^(0$|-?[0-9]\d*(\.\d*[0-9]$)?|-?0\.\d*[0-9])$/.test(r.value)) {
             if ((Number(r.value) > 2) && (Number(r.value) < 5)) {
                 rError.innerHTML = "";
                 allRightR = true;
