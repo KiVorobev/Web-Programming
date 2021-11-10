@@ -17,7 +17,6 @@ public class ControllerServlet extends HttpServlet {
                 }
                 else {
                     response.setStatus(422);
-                    return;
                 }
     }
 }
