@@ -28,7 +28,6 @@ public class Bean {
         return bean;
     }
 
-
     public double getX() {
         return x;
     }
