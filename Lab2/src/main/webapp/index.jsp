@@ -18,7 +18,7 @@
             text-align: center;
             font: 30px monospace;
             color: #ecec97;
-            width: 1518px;
+            width: 100%;
             height: 90px;
             background-color: purple;
             position: relative;
