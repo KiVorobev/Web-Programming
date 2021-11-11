@@ -1,10 +1,11 @@
 package com.example.Web2.results;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
 import java.util.List;
 
-public class Data {
+public class Data implements Serializable {
 
     private final List<Bean> beanList;
     private static Data instance;
