@@ -2,10 +2,11 @@ package com.example.Web2.results;
 
 import org.kopitubruk.util.json.JSONUtil;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Bean {
+public class Bean implements Serializable {
     private double x;
     private double y;
     private double r;
