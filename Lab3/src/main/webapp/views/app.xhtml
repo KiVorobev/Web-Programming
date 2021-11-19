@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: Asus
+  Date: 17.11.2021
+  Time: 15:10
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>App</title>
+</h:head>
+
+<h:body>
+    <h:outputStylesheet name="css/general.css"/>
+    <h:outputStylesheet name="css/app-page.css"/>
+    <h:outputScript name="js/validator.js"/>
+    <ui:include src="general/header.xhtml"></ui:include>
+    <div class="main">
+        <ui:include src="app_page/panel.xhtml"></ui:include>
+        <ui:include src="app_page/graph.xhtml"></ui:include>
+        <ui:include src="app_page/table.xhtml"></ui:include>
+    </div>
+</h:body>
+
+</html>
