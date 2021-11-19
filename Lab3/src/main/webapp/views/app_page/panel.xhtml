@@ -1,0 +1,60 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:outputScript name="js/switcher.js"></h:outputScript>
+    <h:outputScript name="js/submit.js"></h:outputScript>
+
+    <form id="form" name="form" onsubmit="return false;">
+
+        <!-- Блок взаимодействия с пользователем -->
+        <div class="forUsers">
+
+            <!-- Блок для значения X -->
+            <div class="X_value">
+                <label>Choose X coordinate:</label>
+                <div id="X">
+                    <input type="checkbox" name="X" value="-3">-3</input>
+                    <input type="checkbox" name="X" value="-2">-2</input>
+                    <input type="checkbox" name="X" value="-1">-1</input>
+                    <input type="checkbox" name="X" value="0"> 0</input>
+                    <input type="checkbox" name="X" value="1"> 1</input>
+                    <input type="checkbox" name="X" value="2"> 2</input>
+                    <input type="checkbox" name="X" value="3"> 3</input>
+                    <input type="checkbox" name="X" value="4"> 4</input>
+                    <input type="checkbox" name="X" value="5"> 5</input>
+                </div>
+            </div>
+
+            <!-- Блок ошибки для координаты X -->
+            <div id="X_error"></div>
+
+            <!-- Блок для значения Y -->
+            <div class="Y_value">
+                <label>Enter Y coordinate:</label>
+                <input type="text" id="Y" name="Y" placeholder="Value (-5...3)" maxlength="8"></input>
+            </div>
+
+            <!-- Блок ошибки для координаты Y -->
+            <div id="Y_error"></div>
+
+            <!-- Блок для значения R -->
+            <div class="R_value">
+                <label>Enter R value:</label>
+                <input type="text" id="R" name="R" placeholder="Value (2...5)" maxlength="8"></input>
+            </div>
+
+            <!-- Блок ошибки для значения R -->
+            <div id="R_error"></div>
+
+            <!-- Блок кнопок -->
+            <div class="buttons">
+                <input id="check" name="check" type="submit" value="Check"></input>
+                <input id="reset" name="reset" type="reset" value="Reset"></input>
+            </div>
+        </div>
+    </form>
+
+</ui:composition>
