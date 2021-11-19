@@ -1,0 +1,56 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <svg xmlns="http://www.w3.org/2000/svg" id="picture">
+
+        <!-- Оси координат -->
+        <line stroke="black" x1="0" y1="175" x2="350" y2="175"></line>
+        <line stroke="black" x1="175" y1="0" x2="175" y2="350"></line>
+
+        <!-- Стрелки к осям -->
+        <polygon points="175,0 170,15 180,15" stroke="black"></polygon>
+        <polygon points="350,175 335,170 335,180" stroke="black"></polygon>
+
+        <!-- Значения на осях -->
+        <text x="335" y="165" font-size="25">x</text>
+        <text x="185" y="15" font-size="25">y</text>
+
+        <!-- Метки на оси X -->
+        <line stroke="black" x1="40" y1="170" x2="40" y2="180"></line>
+        <line stroke="black" x1="110" y1="170" x2="110" y2="180"></line>
+        <line stroke="black" x1="240" y1="170" x2="240" y2="180"></line>
+        <line stroke="black" x1="310" y1="170" x2="310" y2="180"></line>
+
+        <!-- Метки на оси Y -->
+        <line stroke="black" x1="170" y1="40" x2="180" y2="40"></line>
+        <line stroke="black" x1="170" y1="110" x2="180" y2="110"></line>
+        <line stroke="black" x1="170" y1="240" x2="180" y2="240"></line>
+        <line stroke="black" x1="170" y1="310" x2="180" y2="310"></line>
+
+        <!-- Подписи к меткам на оси X -->
+        <text x="35" y="160" font-size="20">-R</text>
+        <text x="90" y="160" font-size="20">-R/2</text>
+        <text x="225" y="160" font-size="20">R/2</text>
+        <text x="305" y="160" font-size="20">R</text>
+
+        <!-- Подписи к меткам на оси Y -->
+        <text x="185" y="45" font-size="20">R</text>
+        <text x="185" y="115" font-size="20">R/2</text>
+        <text x="185" y="245" font-size="20">-R/2</text>
+        <text x="185" y="315" font-size="20">-R</text>
+
+        <!-- 2-я четверть -->
+        <polygon points="110,175 175,175 175,40 110,40" fill="blue" fill-opacity="0.4"></polygon>
+
+        <!-- 3-я четверть -->
+        <polygon points="40,175 175,175 175,240" fill="blue" fill-opacity="0.4"></polygon>
+
+        <!-- 4-я четверть -->
+        <path fill="blue" fill-opacity="0.4"
+              d="M240,175 A80,110 90 0,1 175,240 L 175,175 Z"></path>
+    </svg>
+
+</ui:composition>
