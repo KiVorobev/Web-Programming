@@ -1,0 +1,13 @@
+.header {
+    text-align: center;
+    font: 300% monospace;
+    color: #ecec97;
+    width: 98%;
+    left: 1%;
+    height: auto;
+    background-color: purple;
+    position: absolute;
+    box-shadow: 0 0 5px 2px black;
+    border-radius: 20px 20px 20px 20px;
+    z-index: 1000;
+}
