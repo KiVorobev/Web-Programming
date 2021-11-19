@@ -1,0 +1,149 @@
+svg {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    left: 770px;
+    top: 85px;
+    border-radius: 20px 20px 20px 20px;
+    border: 5px solid #a81111;
+    transition: 200ms;
+}
+.forUsers {
+    font: 25px "Century Gothic";
+    height: 428px;
+    width: 648px;
+    top: 50px;
+    left: 50px;
+    color: #ecec97;
+    position: absolute;
+    background-color: #1b3370;
+    box-shadow: 0 0 50px 10px rgba(34, 41, 121, 0.55);
+    border-radius: 20px 20px 20px 20px;
+    transition: 200ms;
+}
+
+.forUsers:hover {
+    box-shadow: 0 0 50px 10px blue ;
+    transition: 200ms;
+    transform: scale(1.07);
+}
+.X_value {
+    position: relative;
+    margin-top: 60px;
+    margin-left: 30px;
+}
+.Y_value {
+    position: relative;
+    margin-top: 55px;
+    margin-left: 55px;
+}
+.R_value {
+    position: relative;
+    margin-top: 55px;
+    margin-left: 100px;
+}
+#reset, #check {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    top: 50px;
+    border-radius: 20px 20px 20px 20px;
+    font: 18px "Century Gothic";
+    left: 10px;
+    margin-left: 90px;
+    transition: 200ms;
+}
+#check:hover, #reset:hover {
+    box-shadow: 0 0 10px 5px whitesmoke;
+    transform: scale(1.1);
+    transition: 200ms;
+}
+#check:active, #reset:active {
+    box-shadow: 0 0 10px 5px greenyellow;
+    transition: 50ms;
+}
+svg:hover {
+    box-shadow: 0 0 10px 5px red;
+    transition: 200ms;
+    transform: scale(1.2);
+}
+
+#R, #Y {
+    text-align: center;
+    position: absolute;
+    border-radius: 20px 20px 20px 20px;
+    height: 30px;
+    outline: none;
+    right: 50px;
+}
+#X {
+    text-align: center;
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    font-size: 18px;
+}
+#X > input[type=checkbox]:hover {
+    box-shadow: 0 0 5px 2px white;
+    transition: 200ms;
+    transform: scale(2);
+}
+#X > input[type=checkbox]:checked {
+    box-shadow: 0 0 5px 2px greenyellow;
+    transition: 200ms;
+}
+#X_error, #Y_error, #R_error {
+    position: absolute;
+    color: #d31f1f;
+    margin-top: 10px;
+    width: 560px;
+    height: 36px;
+    left: 55px;
+    text-align: center;
+}
+#picture_error {
+    position: absolute;
+    left: 730px;
+    top: 485px;
+    height: 36px;
+    text-align: center;
+    color: #d31f1f;
+    width: 430px;
+    font-size: 25px;
+}
+#results {
+    max-width: 1200px;
+    width: 1200px;
+    top: 548px;
+    height: 75px;
+    position: absolute;
+    background-color: whitesmoke;
+    box-shadow: 0 18px 10px 5px rgba(16, 18, 30, 0.55);
+    text-align: center;
+    border-spacing: 60px 5px;
+}
+input[type=checkbox] {
+    width: 10px;
+    height: 10px;
+    transform: scale(1.3);
+    transition: 200ms;
+}
+input[type=text]:hover, input[type=text]:focus {
+    box-shadow: 0 0 10px 5px white;
+}
+
+input {
+    text-align: center;
+    width: 191px;
+}
+
+.main {
+    top: 90px;
+    left: 10%;
+    width: 1200px;
+    height: 595px;
+    box-shadow: 0 0 10px 5px rgba(16, 18, 30, 0.55);
+    background-color: whitesmoke;
+    font: 30px "Century Gothic";
+    position: absolute;
+}
