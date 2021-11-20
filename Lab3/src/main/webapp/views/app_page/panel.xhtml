@@ -51,7 +51,9 @@
 
             <!-- Блок кнопок -->
             <div class="buttons">
-                <input id="check" name="check" type="submit" value="Check"></input>
+                <input id="check" name="check" type="submit" value="Check">
+                    <f:ajax execute="form" render="results"></f:ajax>
+                </input>
                 <input id="reset" name="reset" type="reset" value="Reset"></input>
             </div>
         </div>
