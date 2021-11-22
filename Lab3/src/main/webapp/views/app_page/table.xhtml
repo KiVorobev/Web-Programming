@@ -7,11 +7,12 @@
     <h:panelGroup id="results">
         <caption>Results:</caption>
         <h:dataTable value="#{exampleBean.hitList}" var="elem">
-            <h:column>
-                <f:facet name="header">X</f:facet>
-                #{elem.x}
-            </h:column>
-
+            <div class="result">
+                <h:column>
+                    <f:facet name="header">X</f:facet>
+                    #{elem.x}
+                </h:column>
+            </div>
             <h:column>
                 <f:facet name="header">Y</f:facet>
                 #{elem.y}
