@@ -12,7 +12,7 @@
             <!-- Блок для значения X -->
             <div class="X_value">
                 <label>Choose X coordinate:</label>
-                    <h:commandLink styleClass="X" value="-4"></h:commandLink>
+                    <h:commandLink styleClass="X" value="-4" onclick="return false;"></h:commandLink>
                     <h:commandLink styleClass="X" value="-3"></h:commandLink>
                     <h:commandLink styleClass="X" value="-2"></h:commandLink>
                     <h:commandLink styleClass="X" value="-1"></h:commandLink>
@@ -29,7 +29,7 @@
             <!-- Блок для значения Y -->
             <div class="Y_value">
                 <h:outputLabel for="Y" value="Enter Y coordinate:"/>
-                <h:inputText id="Y" maxlength="8" value="#{exampleBean.newHit.y}"></h:inputText>
+                <h:inputText id="Y" maxlength="8" styleClass="Y" value="#{exampleBean.newHit.y}"></h:inputText>
             </div>
 
             <!-- Блок ошибки для координаты Y -->
@@ -50,7 +50,7 @@
 
             <!-- Блок кнопок -->
             <div class="buttons">
-                <h:commandButton id="check" value="Check" action="#{exampleBean.addHit()}">
+                <h:commandButton id="check" styleClass="check" value="Check" action="#{exampleBean.addHit()}">
                     <f:ajax execute="form" render="results"></f:ajax>
                 </h:commandButton>
                 <input id="reset" name="reset" type="reset" value="Reset"></input>
