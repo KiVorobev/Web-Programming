@@ -75,7 +75,7 @@ svg:hover {
     margin-left: 100px;
 }
 
-#reset, #check {
+.check, #reset {
     position: relative;
     width: 200px;
     height: 50px;
@@ -87,18 +87,18 @@ svg:hover {
     transition: 200ms;
 }
 
-#check:hover, #reset:hover {
+.check:hover, #reset:hover {
     box-shadow: 0 0 10px 5px whitesmoke;
     transform: scale(1.1);
     transition: 200ms;
 }
 
-#check:active, #reset:active {
+.check:active, #reset:active {
     box-shadow: 0 0 10px 5px greenyellow;
     transition: 50ms;
 }
 
-#Y {
+.Y {
     text-align: center;
     position: absolute;
     border-radius: 20px 20px 20px 20px;
@@ -130,7 +130,7 @@ svg:hover {
     border-spacing: 60px 5px;
 }
 
-input[type=text]:hover, input[type=text]:focus {
+.Y:hover, .Y:focus {
     box-shadow: 0 0 10px 5px white;
 }
 
