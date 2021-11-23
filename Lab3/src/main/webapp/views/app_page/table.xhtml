@@ -4,40 +4,38 @@
         xmlns:h="http://java.sun.com/jsf/html"
         xmlns:f="http://java.sun.com/jsf/core">
 
-    <h:panelGroup id="results">
-        <caption>Results:</caption>
-        <h:dataTable value="#{exampleBean.hitList}" var="elem">
-            <div class="result">
+    <div>
+        <h:panelGroup id="results">
+            <h:outputText styleClass="caption" value="Results:"></h:outputText>
+            <h:dataTable styleClass="results" value="#{exampleBean.hitList}" var="elem">
+                <div class="result">
+                    <h:column>
+                        <f:facet name="header">X</f:facet>
+                        #{elem.x}
+                    </h:column>
+                </div>
                 <h:column>
-                    <f:facet name="header">X</f:facet>
-                    #{elem.x}
+                    <f:facet name="header">Y</f:facet>
+                    #{elem.y}
                 </h:column>
-            </div>
-            <h:column>
-                <f:facet name="header">Y</f:facet>
-                #{elem.y}
-            </h:column>
 
-            <h:column>
-                <f:facet name="header">R</f:facet>
-                #{elem.r}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Current Time</f:facet>
-                #{elem.currentTime}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Execution Time</f:facet>
-                #{elem.executionTime}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Hit</f:facet>
-                #{elem.result}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Checking</f:facet>
-                #{elem}
-            </h:column>
-        </h:dataTable>
-    </h:panelGroup>
+                <h:column>
+                    <f:facet name="header">R</f:facet>
+                    #{elem.r}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Current Time</f:facet>
+                    #{elem.currentTime}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Execution Time</f:facet>
+                    #{elem.executionTime}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Hit</f:facet>
+                    #{elem.result}
+                </h:column>
+            </h:dataTable>
+        </h:panelGroup>
+    </div>
 </ui:composition>
