@@ -125,10 +125,11 @@ svg:hover {
     transition: 500ms;
 }
 
-#results {
+.results {
     max-width: 100%;
     width: 100%;
     top: 97%;
+    min-height: 10vh;
     height: auto;
     position: absolute;
     box-shadow: 0 1.8vw 1.2vw 0.5vw #2d2c2c;
@@ -137,6 +138,12 @@ svg:hover {
     text-align: center;
     border-spacing: 60px 5px;
     transition: 500ms;
+}
+
+.caption {
+    position: relative;
+    top: 73vh;
+    left: 35vw;
 }
 
 .Y:hover, .Y:focus {
