@@ -5,35 +5,35 @@
         xmlns:f="http://java.sun.com/jsf/core">
 
     <div>
+        <h:commandButton id="clean" styleClass="clean" value="Clean table" action="#{resultBean.deleteList}">
+            <f:ajax render="results"/>
+        </h:commandButton>
         <h:panelGroup id="results">
-            <h:outputText styleClass="caption" value="Results:"></h:outputText>
-            <h:dataTable styleClass="results" value="#{exampleBean.hitList}" var="elem">
-                <div class="result">
-                    <h:column>
-                        <f:facet name="header">X</f:facet>
-                        #{elem.x}
-                    </h:column>
-                </div>
+            <h:outputText styleClass="caption" value="Results:"/>
+            <h:dataTable styleClass="results" value="#{resultBean.resultList}" var="elem">
+                <h:column>
+                    <f:facet name="header">X</f:facet>
+                    ${elem.x}
+                </h:column>
                 <h:column>
                     <f:facet name="header">Y</f:facet>
-                    #{elem.y}
+                    ${elem.y}
                 </h:column>
-
                 <h:column>
                     <f:facet name="header">R</f:facet>
-                    #{elem.r}
+                    ${elem.r}
                 </h:column>
                 <h:column>
                     <f:facet name="header">Current Time</f:facet>
-                    #{elem.currentTime}
+                    ${elem.currentTime}
                 </h:column>
                 <h:column>
                     <f:facet name="header">Execution Time</f:facet>
-                    #{elem.executionTime}
+                    ${elem.executionTime} ms
                 </h:column>
                 <h:column>
                     <f:facet name="header">Hit</f:facet>
-                    #{elem.result}
+                    ${elem.result}
                 </h:column>
             </h:dataTable>
         </h:panelGroup>
