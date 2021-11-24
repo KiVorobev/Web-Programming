@@ -18,8 +18,8 @@
         </navigation-case>
     </navigation-rule>
     <managed-bean>
-        <managed-bean-name>exampleBean</managed-bean-name>
-        <managed-bean-class>com.example.Web3.ExampleBean</managed-bean-class>
+        <managed-bean-name>resultBean</managed-bean-name>
+        <managed-bean-class>com.example.Web3.beans.ResultBean</managed-bean-class>
         <managed-bean-scope>application</managed-bean-scope>
     </managed-bean>
 </faces-config>
