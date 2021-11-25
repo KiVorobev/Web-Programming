@@ -5,8 +5,11 @@
         xmlns:f="http://java.sun.com/jsf/core">
 
     <div>
+        <h:commandButton id="update" styleClass="update" value="Update data" action="#{resultBean.update}">
+            <f:ajax render="@all"/>
+        </h:commandButton>
         <h:commandButton id="clean" styleClass="clean" value="Clean table" action="#{resultBean.deleteList}">
-            <f:ajax render="results"/>
+            <f:ajax render="@all"/>
         </h:commandButton>
         <h:panelGroup id="results">
             <h:outputText styleClass="caption" value="Results:"/>
