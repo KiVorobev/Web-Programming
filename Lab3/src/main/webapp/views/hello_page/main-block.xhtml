@@ -2,13 +2,15 @@
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:h="http://xmlns.jcp.org/jsf/html"
         xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
     <div class="main-block">
         <div class="time-block">
             <div id="clock"></div>
-            <h:outputScript name="/js/time.js"/>
+            <div id="date"></div>
         </div>
+        <h:outputScript name="/js/time.js"/>
         <div class="next-page-block">
-            <h:button styleClass="next-page-button" value="Go to App" outcome="toAppPage"></h:button>
+            <h:button styleClass="next-page-button" value="Go to App" outcome="toAppPage"/>
         </div>
     </div>
 </ui:composition>
