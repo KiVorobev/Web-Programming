@@ -7,96 +7,115 @@
 
     <h:form id="form" onsubmit="return false;">
 
+        <h:panelGroup id="hidden">
+            <h:inputHidden id="hiddenX" value="#{resultBean.clickResult.x}"/>
+            <h:inputHidden id="hiddenY" value="#{resultBean.clickResult.y}"/>
+            <h:inputHidden id="hiddenR" value="${resultBean.clickResult.r}"/>
+        </h:panelGroup>
+
         <!-- Блок взаимодействия с пользователем -->
-        <div class="forUsers">
+        <div id="forUsers" class="forUsers">
 
             <div id="values">
                 <h:outputLabel for="x_display" value="Value of X: "/>
-                <h:outputText id="x_display" styleClass="x_display" value="${resultBean.newResult.x}"/>
+                <h:outputText id="x_display" styleClass="x_display" value="#{resultBean.newResult.x}"/>
                 <br/>
                 <h:outputLabel for="r_display" value="Value of R: "/>
-                <h:outputText id="r_display" styleClass="r_display" value="${resultBean.newResult.r}"/>
+                <h:outputText id="r_display" styleClass="r_display" value="#{resultBean.newResult.r}"/>
             </div>
 
             <!-- Блок для значения X -->
             <div class="X_value">
                 <label>Choose X coordinate:</label>
                 <h:commandLink styleClass="X" name="X" value="-4" action="#{resultBean.newResult.setX(-4)}">
-                    <f:ajax execute="@this" render="x_display"/>
+                    <f:ajax execute="@this" render="xError x_display"/>
                 </h:commandLink>
                 <h:commandLink styleClass="X" name="X" value="-3" action="#{resultBean.newResult.setX(-3)}">
-                    <f:ajax execute="@this" render="x_display"/>
+                    <f:ajax execute="@this" render="xError x_display"/>
                 </h:commandLink>
                 <h:commandLink styleClass="X" name="X" value="-2" action="#{resultBean.newResult.setX(-2)}">
-                    <f:ajax execute="@this" render="x_display"/>
+                    <f:ajax execute="@this" render="xError x_display"/>
                 </h:commandLink>
                 <h:commandLink styleClass="X" name="X" value="-1" action="#{resultBean.newResult.setX(-1)}">
-                    <f:ajax execute="@this" render="x_display"/>
+                    <f:ajax execute="@this" render="xError x_display"/>
                 </h:commandLink>
                 <h:commandLink styleClass="X" name="X" value="0" action="#{resultBean.newResult.setX(0)}">
-                    <f:ajax execute="@this" render="x_display"/>
+                    <f:ajax execute="@this" render="xError x_display"/>
                 </h:commandLink>
                 <h:commandLink styleClass="X" name="X" value="1" action="#{resultBean.newResult.setX(1)}">
-                    <f:ajax execute="@this" render="x_display"/>
+                    <f:ajax execute="@this" render="xError x_display"/>
                 </h:commandLink>
                 <h:commandLink styleClass="X" name="X" value="2" action="#{resultBean.newResult.setX(2)}">
-                    <f:ajax execute="@this" render="x_display"/>
+                    <f:ajax execute="@this" render="xError x_display"/>
                 </h:commandLink>
                 <h:commandLink styleClass="X" name="X" value="3" action="#{resultBean.newResult.setX(3)}">
-                    <f:ajax execute="@this" render="x_display"/>
+                    <f:ajax execute="@this" render="xError x_display"/>
                 </h:commandLink>
                 <h:commandLink styleClass="X" name="X" value="4" action="#{resultBean.newResult.setX(4)}">
-                    <f:ajax execute="@this" render="x_display"/>
+                    <f:ajax execute="@this" render="xError x_display"/>
                 </h:commandLink>
             </div>
 
             <!-- Блок ошибки для координаты X -->
-            <div id="X_error"></div>
+            <h:panelGroup id="xError">
+                <p id="X_error" class="X_error">
+                    ${resultBean.XError}
+                </p>
+            </h:panelGroup>
 
             <!-- Блок для значения Y -->
             <div class="Y_value">
                 <h:outputLabel for="Y" value="Enter Y coordinate:"/>
-                <h:inputText id="Y" maxlength="6" a:placeholder="Value from -3 to 3" styleClass="Y"
-                             value="#{resultBean.newResult.y}" required="true"
-                             requiredMessage="Value cannot be empty!"/>
+                <h:inputText id="Y" maxlength="6" a:placeholder="Value (-3...3)"
+                             styleClass="Y"
+                             value="#{resultBean.newResult.y}"/>
             </div>
 
             <!-- Блок ошибки для координаты Y -->
-            <div id="Y_error"></div>
+            <h:panelGroup id="yError">
+                <p id="Y_error" class="Y_error">
+                    ${resultBean.YError}
+                </p>
+            </h:panelGroup>
 
             <!-- Блок для значения R -->
             <div class="R_value">
                 <label>Enter R value:</label>
-                <h:commandButton styleClass="R" name="R" value="1" action="#{resultBean.newResult.setR(1)}">
-                    <f:ajax execute="@this" render="r_display"/>
+                <h:commandButton styleClass="R" name="R" value="1" action="#{resultBean.setNewR(1)}">
+                    <f:ajax execute="@this" render="rError graph r_display hidden"/>
                 </h:commandButton>
-                <h:commandButton styleClass="R" name="R" value="2" action="#{resultBean.newResult.setR(2)}">
-                    <f:ajax execute="@this" render="r_display"/>
+                <h:commandButton styleClass="R" name="R" value="2" action="#{resultBean.setNewR(2)}">
+                    <f:ajax execute="@this" render="rError graph r_display hidden"/>
                 </h:commandButton>
-                <h:commandButton styleClass="R" name="R" value="3" action="#{resultBean.newResult.setR(3)}">
-                    <f:ajax execute="@this" render="r_display"/>
+                <h:commandButton styleClass="R" name="R" value="3" action="#{resultBean.setNewR(3)}">
+                    <f:ajax execute="@this" render="rError graph r_display hidden"/>
                 </h:commandButton>
-                <h:commandButton styleClass="R" name="R" value="4" action="#{resultBean.newResult.setR(4)}">
-                    <f:ajax execute="@this" render="r_display"/>
+                <h:commandButton styleClass="R" name="R" value="4" action="#{resultBean.setNewR(4)}">
+                    <f:ajax execute="@this" render="rError graph r_display hidden"/>
                 </h:commandButton>
-                <h:commandButton styleClass="R" name="R" value="5" action="#{resultBean.newResult.setR(5)}">
-                    <f:ajax execute="@this" render="r_display"/>
+                <h:commandButton styleClass="R" name="R" value="5" action="#{resultBean.setNewR(5)}">
+                    <f:ajax execute="@this" render="rError graph  r_display hidden"/>
                 </h:commandButton>
             </div>
 
             <!-- Блок ошибки для значения R -->
-            <div id="R_error"></div>
+            <h:panelGroup id="rError">
+                <p id="R_error" class="R_error">
+                    ${resultBean.RError}
+                </p>
+            </h:panelGroup>
 
             <!-- Блок кнопок -->
             <div class="buttons">
-                <h:commandButton id="check" styleClass="check" value="Check" action="#{resultBean.addResult()}">
+                <h:commandButton id="check" styleClass="check" value="Check" action="#{resultBean.addCheck()}">
                     <f:ajax execute="form" render="@all"/>
                 </h:commandButton>
                 <h:commandButton id="reset" styleClass="reset" value="Reset"
                                  action="#{resultBean.defaultResult}">
-                    <f:ajax execute="@this" render="@parent"/>
+                    <f:ajax execute="@this" render="@parent graph"/>
                 </h:commandButton>
             </div>
         </div>
     </h:form>
+    <h:outputScript name="js/click.js"/>
 </ui:composition>
