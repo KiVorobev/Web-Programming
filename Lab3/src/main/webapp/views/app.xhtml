@@ -20,12 +20,14 @@
 <h:body>
     <h:outputStylesheet name="css/general.css"/>
     <h:outputStylesheet name="css/app-page.css"/>
-    <ui:include src="general/header.xhtml"></ui:include>
-    <ui:include src="app_page/page-buttons.xhtml"></ui:include>
+    <h:outputScript library="primefaces" name="jquery/jquery.js" />
+    <h:outputScript name="js/click.js"/>
+    <ui:include src="general/header.xhtml"/>
+    <ui:include src="app_page/page-buttons.xhtml"/>
     <div class="main">
-        <ui:include src="app_page/panel.xhtml"></ui:include>
-        <ui:include src="app_page/graph.xhtml"></ui:include>
-        <ui:include src="app_page/table.xhtml"></ui:include>
+        <ui:include src="app_page/panel.xhtml"/>
+        <ui:include src="app_page/graph.xhtml"/>
+        <ui:include src="app_page/table.xhtml"/>
     </div>
 </h:body>
 
