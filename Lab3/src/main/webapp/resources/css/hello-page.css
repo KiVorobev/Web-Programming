@@ -21,7 +21,6 @@
     box-shadow: 0 0 5px 2px black;
     border-radius: 20px 20px 20px 20px;
     background: papayawhip;
-    font: 500% "Century Gothic";
     width: 90%;
     height: 50%;
     top: 10%;
@@ -54,4 +53,12 @@
 
 .next-page-button:active {
     box-shadow: 0 0 10px 5px greenyellow;
+}
+
+#clock {
+    font: 500% "Century Gothic";
+}
+
+#date {
+    font: 300% "Century Gothic";
 }
