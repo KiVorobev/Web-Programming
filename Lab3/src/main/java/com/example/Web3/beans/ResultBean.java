@@ -15,9 +15,9 @@ public class ResultBean {
     private String xError = "";
     private String yError = "";
     private String rError = "";
-    private String picture = "../resources/img/error.jpg";
     private int pointer5 = 0;
     private int pointer2 = 0;
+    private int isPointer = 0;
     private Result newResult = new Result();
     private Result clickResult = new Result();
     private final Validator validator = new Validator();
@@ -84,6 +84,8 @@ public class ResultBean {
         else this.pointer5 = 0;
         if (r == 2) this.pointer2 = 0;
         else this.pointer2 = 1;
+        if (r == 0) this.isPointer = 0;
+        else this.isPointer = 1;
     }
 
     public void update() {
@@ -95,7 +97,6 @@ public class ResultBean {
     }
 
     public void addCheck() {
-        System.out.println(clickResult);
         if (clickResult.getX() != null && clickResult.getY() != null) addClick();
         else addResult();
     }
@@ -139,5 +140,4 @@ public class ResultBean {
         result.setResult(new HitChecker().isHit(result.getX(), result.getY(), result.getR()));
         result.setExecutionTime((System.nanoTime() - start) / 1000);
     }
-
 }
