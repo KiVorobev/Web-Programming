@@ -9,7 +9,7 @@
             <f:ajax render="@all"/>
         </h:commandButton>
         <h:commandButton id="clean" styleClass="clean" value="Clean table" action="#{resultBean.deleteList}">
-            <f:ajax render="@all"/>
+            <f:ajax render="results graph"/>
         </h:commandButton>
         <h:panelGroup id="results">
             <h:outputText styleClass="caption" value="Results:"/>
