@@ -137,9 +137,9 @@
                   ${resultBean.newResult.r * 15} ${resultBean.newResult.r * 15}, 0, 0, 0, 175
                   ${175 + resultBean.newResult.r * 16.875} L 175 175 Z"/>
             <ui:repeat value="${resultBean.resultList}" var="point">
-                <circle cx="${175 + point.x * resultBean.newResult.r / point.r / 4.0 * 135}"
-                        cy="${175 - point.y * resultBean.newResult.r  / point.r / 4.0 * 135}"
-                        r="${resultBean.newResult.r * 1.25}"
+                <circle cx="${175 + point.x / 4.0 * 135}"
+                        cy="${175 - point.y / 4.0 * 135}"
+                        r="${((1.5 + point.r / 2.0) * resultBean.isPointer)}"
                         fill='${point.result ? "green" : "red"}'/>
             </ui:repeat>
         </svg>
