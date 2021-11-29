@@ -71,6 +71,7 @@ public class ResultBean {
         clickResult.setX(null);
         clickResult.setY(null);
         clickResult.setR(null);
+        isPointer = 0;
         xError = "";
         yError = "";
         rError = "";
