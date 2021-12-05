@@ -123,6 +123,7 @@ public class ResultBean {
                 makeResult(clickResult);
                 resultService.addResult(clickResult);
                 update();
+                clickResult = new Result();
                 saveSubmitValues(newResult.getX(), newResult.getY(), newResult.getR());
             } catch (Exception exception) {
                 System.out.println("Database is dead...");
@@ -131,8 +132,6 @@ public class ResultBean {
             System.out.println("NullPointer here");
             System.out.println(newResult);
         }
-        clickResult.setX(null);
-        clickResult.setY(null);
     }
 
     public void makeResult(Result result) {
