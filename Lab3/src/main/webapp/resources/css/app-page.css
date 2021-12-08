@@ -258,3 +258,11 @@ th {
     height: 1.2vh;
     color: greenyellow;
 }
+
+.true {
+    color: #0fc40f;
+}
+
+.false {
+    color: red;
+}

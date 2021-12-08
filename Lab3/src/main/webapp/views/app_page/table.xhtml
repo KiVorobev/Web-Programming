@@ -16,27 +16,27 @@
             <h:dataTable styleClass="results" value="#{resultBean.resultList}" var="elem">
                 <h:column>
                     <f:facet name="header">X</f:facet>
-                    ${elem.x}
+                    <h:outputText value="${elem.x}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Y</f:facet>
-                    ${elem.y}
+                    <h:outputText value="${elem.y}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">R</f:facet>
-                    ${elem.r}
+                    <h:outputText value="${elem.r}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Current Time</f:facet>
-                    ${elem.currentTime}
+                    <h:outputText value="${elem.currentTime}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Execution Time</f:facet>
-                    ${elem.executionTime} ms
+                    <h:outputText value="${elem.executionTime} ms"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Hit</f:facet>
-                    ${elem.result}
+                    <h:outputText value="${elem.result}" styleClass="#{(elem.result) ? 'true' : 'false'}"/>
                 </h:column>
             </h:dataTable>
         </h:panelGroup>
