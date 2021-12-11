@@ -13,7 +13,7 @@
         </h:commandButton>
         <h:panelGroup id="results">
             <h:outputText styleClass="caption" value="Results:"/>
-            <h:dataTable styleClass="results" value="#{resultBean.resultList}" var="elem">
+            <h:dataTable styleClass="results" value="#{resultBean.getResults()}" var="elem">
                 <h:column>
                     <f:facet name="header">X</f:facet>
                     <h:outputText value="${elem.x}"/>

@@ -24,6 +24,11 @@ public class ResultBean {
     private final ResultService resultService = new ResultService();
     private List<Result> resultList = new ArrayList<Result>(resultService.findAllResults());
 
+    public List<Result> getResults(){
+        resultList = resultService.findAllResults();
+        return resultList;
+    }
+
     public void addResult() {
         makeSubmitErrors();
         if (newResult.getX() != null && newResult.getY() != null && newResult.getR() != null) {
@@ -31,7 +36,6 @@ public class ResultBean {
                 try {
                     makeResult(newResult);
                     resultService.addResult(newResult);
-                    update();
                     saveSubmitValues(newResult.getX(), newResult.getY(), newResult.getR());
                 } catch (Exception exception) {
                     System.out.println("Database is dead...");
@@ -122,7 +126,6 @@ public class ResultBean {
                 coordinatesToValues(clickResult);
                 makeResult(clickResult);
                 resultService.addResult(clickResult);
-                update();
                 clickResult = new Result();
                 saveSubmitValues(newResult.getX(), newResult.getY(), newResult.getR());
             } catch (Exception exception) {
