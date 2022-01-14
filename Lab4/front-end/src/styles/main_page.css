@@ -1,0 +1,70 @@
+.up {
+    position: relative;
+    height: 70vh;
+}
+
+.down {
+    position: relative;
+}
+
+.input_block {
+    display: inline-block;
+    font: 1.6vw "Century Gothic";
+    height: 58vh;
+    width: 48vw;
+    top: -1vh;
+    left: 1.4vw;
+    color: #ecec97;
+    position: relative;
+    background-color: #1b3370;
+    box-shadow: 0 0 0.6vw 0.3vw black;
+    border-radius: 20px 20px 20px 20px;
+    transition: 200ms;
+    z-index: 500;
+}
+
+.input_block:hover {
+    box-shadow: 0 0 50px 10px blue;
+    transition: 200ms;
+    transform: scale(1.05);
+}
+
+.picture {
+    display: inline-block;
+    left: 15vw;
+    border-radius: 20px 20px 20px 20px;
+    position: relative;
+    border: 5px solid #a81111;
+    top: 2vh;
+    width: 28%;
+    height: 80%;
+}
+
+.picture:hover {
+    box-shadow: 0 0 50px 10px red;
+    transition: 200ms;
+}
+
+.result_table {
+    display: table;
+    width: 98%;
+    margin-left: 1vw;
+    margin-top: 1vh;
+}
+
+.log_out {
+    display: inline-block;
+    width: 98%;
+    margin-left: 1vw;
+    height: 7vh;
+    margin-top: 1vh;
+}
+
+.clean_button {
+    display: inline-block;
+    margin-top: 1vh;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: 43.6vw;
+}

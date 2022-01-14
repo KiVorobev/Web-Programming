@@ -1,0 +1,19 @@
+.main-block {
+    position: relative;
+    text-align: center;
+    background: #1b3370;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 0 2px 2px black;
+    width: 80%;
+    left: 10%;
+    top: 20vh;
+    font-family: monospace;
+    transition: 200ms;
+    color: bisque;
+}
+
+.main-block:hover {
+    box-shadow: 0 0 10px 5px blue;
+    transform: scale(1.22);
+    transition: 200ms;
+}

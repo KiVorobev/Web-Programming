@@ -1,0 +1,20 @@
+.form_input {
+    position: relative;
+    width: 14vw;
+    height: 7vh;
+    border-radius: 20px 20px 20px 20px;
+    font: 1.3vw "Century Gothic";
+    transition: 200ms;
+    margin-left: 4vw;
+}
+
+.form_input:hover {
+    box-shadow: 0 0 10px 5px whitesmoke;
+    transform: scale(1.1);
+    transition: 200ms;
+}
+
+.form_input:active {
+    box-shadow: 0 0 10px 5px greenyellow;
+    transition: 50ms;
+}

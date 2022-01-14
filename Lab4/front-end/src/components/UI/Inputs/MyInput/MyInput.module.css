@@ -1,0 +1,13 @@
+.my_input {
+    border-radius: 20px 20px 20px 20px;
+    height: 5vh;
+    width: 30vw;
+    text-align: center;
+    margin-top: 1vh;
+    font: 1.3vw "Century Gothic";
+}
+
+.my_input:focus {
+    box-shadow: 0 0 10px 5px whitesmoke;
+}
+
