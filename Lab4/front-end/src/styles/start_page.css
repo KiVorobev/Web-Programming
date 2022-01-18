@@ -17,3 +17,36 @@
     transform: scale(1.22);
     transition: 200ms;
 }
+
+.change_block {
+    text-align: center;
+    margin-left: 24.5%;
+    width: 51%;
+    background-color: purple;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.change_block:hover {
+    box-shadow: 0 0 5px 3px whitesmoke;
+    transition: 200ms;
+}
+
+.change_block:active {
+    box-shadow: 0 0 10px 5px greenyellow;
+    transition: 200ms;
+}
+
+.change_button {
+    border-radius: 10px 10px 10px 10px;
+    font: 2vw monospace;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: purple;
+    transition: 200ms;
+}
+
+.login_error {
+    margin-top: 1vh;
+    font: 1.4vw monospace;
+    color: red;
+}

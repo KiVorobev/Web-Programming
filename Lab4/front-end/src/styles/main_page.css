@@ -12,7 +12,7 @@
     font: 1.6vw "Century Gothic";
     height: 58vh;
     width: 48vw;
-    top: -1vh;
+    margin-top: 2vh;
     left: 1.4vw;
     color: #ecec97;
     position: relative;
@@ -35,9 +35,8 @@
     border-radius: 20px 20px 20px 20px;
     position: relative;
     border: 5px solid #a81111;
-    top: 2vh;
-    width: 28%;
-    height: 80%;
+    width: 350px;
+    height: 350px;
 }
 
 .picture:hover {
@@ -53,11 +52,12 @@
 }
 
 .log_out {
-    display: inline-block;
-    width: 98%;
+    text-align: center;
     margin-left: 1vw;
-    height: 7vh;
     margin-top: 1vh;
+    background-color: red;
+    width: 98%;
+    border-radius: 20px 20px 20px 20px;
 }
 
 .clean_button {
@@ -67,4 +67,25 @@
     height: 5vh;
     border-radius: 20px 20px 20px 20px;
     margin-left: 43.6vw;
+}
+
+.log_out_button {
+    border-radius: 20px 20px 20px 20px;
+    font: 2vw monospace;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: red;
+    border-color: red;
+    z-index: 500;
+    transition: 200ms;
+}
+
+.log_out:hover {
+    box-shadow: 0 0 10px 5px darkred;
+    transition: 200ms;
+}
+
+.log_out:active {
+    box-shadow: 0 0 10px 5px greenyellow;
+    transition: 200ms;
 }

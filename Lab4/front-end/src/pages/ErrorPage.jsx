@@ -7,7 +7,7 @@ const ErrorPage = () => {
             <h1 style={{color: "red"}}>
                 You have gone to a non-existent page!
             </h1>
-            <Link to='/start'>Back to start page</Link>
+            <Link to='/'>Back to start page</Link>
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import MainPage from "../pages/MainPage";
-import StartPage from "../pages/StartPage";
+import SignInPage from "../pages/SignInPage";
 
 
 export const privateRoutes = [
@@ -7,5 +7,5 @@ export const privateRoutes = [
 ]
 
 export const publicRoutes = [
-    {path: '/start', component: StartPage, exact: true},
+    {path: '/start', component: SignInPage, exact: true},
 ]

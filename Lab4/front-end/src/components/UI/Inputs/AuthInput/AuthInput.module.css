@@ -7,10 +7,6 @@
     font: 2vw monospace;
 }
 
-.auth_input:focus {
+.auth_input:focus, .auth_input:active {
     box-shadow: 0 0 10px 5px whitesmoke;
-}
-
-.auth_input:active {
-    box-shadow: 0 0 10px 5px greenyellow;
 }
