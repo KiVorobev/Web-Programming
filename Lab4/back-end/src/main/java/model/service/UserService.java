@@ -3,26 +3,27 @@ package model.service;
 import model.dao.UserDao;
 import model.entity.User;
 
+import javax.ejb.EJB;
+import javax.ejb.Singleton;
+import javax.inject.Inject;
 import java.util.ArrayList;
-import java.util.List;
 
+@Singleton
 public class UserService {
 
-    private final UserDao usersDao = new UserDao();
+    @EJB
+    private UserDao userDao = new UserDao();
 
-    public UserService() {
+    public void saveUser(User user) throws Exception {
+        userDao.save(user);
     }
 
-    public void addUser(User user) {
-        usersDao.save(user);
+    public User findByUsername(String username) throws IndexOutOfBoundsException {
+        return userDao.findByUsername(username);
     }
 
-    public List<User> findAllResults() {
-        List<User> users = new ArrayList<User>(usersDao.findAll());
-        return users;
+    public ArrayList<User> findAllUsers() {
+        return (ArrayList<User>) userDao.findAll();
     }
 
-    public void deleteAll() {
-        usersDao.deleteAll();
-    }
 }

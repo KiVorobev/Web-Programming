@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>lab4-back</artifactId>
+    <artifactId>lab4-ee</artifactId>
     <version>1.0</version>
-    <name>lab4-back</name>
+    <name>lab4-ee</name>
     <packaging>war</packaging>
 
     <properties>
@@ -36,10 +36,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>

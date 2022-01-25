@@ -6,47 +6,80 @@
     box-shadow: 0 0 2px 2px black;
     width: 80%;
     left: 10%;
-    top: 20vh;
+    top: 15vh;
     font-family: monospace;
     transition: 200ms;
     color: bisque;
+    height: auto;
 }
 
 .main-block:hover {
     box-shadow: 0 0 10px 5px blue;
-    transform: scale(1.22);
     transition: 200ms;
 }
 
-.change_block {
-    text-align: center;
-    margin-left: 24.5%;
-    width: 51%;
-    background-color: purple;
-    border-radius: 10px 10px 10px 10px;
-}
-
-.change_block:hover {
-    box-shadow: 0 0 5px 3px whitesmoke;
-    transition: 200ms;
-}
-
-.change_block:active {
-    box-shadow: 0 0 10px 5px greenyellow;
-    transition: 200ms;
+h1 {
+    font: 2vw monospace;
 }
 
 .change_button {
+    width: 50%;
     border-radius: 10px 10px 10px 10px;
     font: 2vw monospace;
-    text-decoration: none;
     color: whitesmoke;
     background-color: purple;
     transition: 200ms;
 }
 
+.change_button:hover {
+    box-shadow: 0 0 5px 3px whitesmoke;
+    transition: 200ms;
+}
+
+.change_button:active {
+    box-shadow: 0 0 10px 5px greenyellow;
+    transition: 200ms;
+}
+
+.auth_input {
+    border-radius: 10px 10px 10px 10px;
+    width: 47%;
+    padding: 5px 15px;
+    margin: 5px 0;
+    border: 1px solid teal;
+    font: 2vw monospace;
+}
+
+.auth_input:focus, .auth_input:active {
+    box-shadow: 0 0 10px 5px whitesmoke;
+}
+
+.auth_button {
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    height: auto;
+    width: 50%;
+    transition: 200ms;
+    font: 1.25vw monospace;
+}
+
+.auth_button:hover {
+    box-shadow:  0 0 10px 5px whitesmoke;
+    transition: 200ms;
+}
+
+.auth_button:active {
+    box-shadow: 0 0 10px 5px greenyellow;
+    transition: 200ms;
+}
+
+label {
+    font: 20px monospace;
+}
+
 .login_error {
-    margin-top: 1vh;
-    font: 1.4vw monospace;
-    color: red;
+    color:red;
+    font-size: 15px;
+    height: 15px;
 }
