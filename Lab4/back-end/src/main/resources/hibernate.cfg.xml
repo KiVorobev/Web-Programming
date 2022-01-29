@@ -8,8 +8,8 @@
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
         <property name="show_sql">true</property>
-        <property name="connection.username">s312439</property>
-        <property name="connection.password">gel443</property>
+        <property name="connection.username">******</property>
+        <property name="connection.password">******</property>
         <mapping class="model.entity.User"/>
         <mapping class="model.entity.Hit"/>
     </session-factory>
